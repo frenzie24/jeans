@@ -2,7 +2,7 @@
 Wireframing and styling web app
 
 ## USER-STORY
-Users want to be able to create HTML wireframes and style their elements using a simple and easy interface
+Users want assistance finding color and font styles to use on webpages
 
 ## REQUIREMENTS
 Users need to be able to select a color palette<br>
