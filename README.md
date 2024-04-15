@@ -1,5 +1,5 @@
 # genes
-Wireframing and styling web app
+styling color and font preview web app
 
 ## USER-STORY
 Users want assistance finding color and font styles to use on webpages
