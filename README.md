@@ -1,4 +1,4 @@
-# code-coop
+# genes
 Wireframing and styling web app
 
 ## USER-STORY
