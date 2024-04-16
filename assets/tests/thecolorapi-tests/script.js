@@ -48,13 +48,14 @@ const stringToColour = (str) => {
     }
     runTest(colour);
 }
-
-function findColorHeXRBGByName(name) {
+// returns a obj with color data (hex/rgb/name/families) based on passed string
+function findColorDataName(name) {
+    // removes all white space
     name = name.replaceAll(" ", "");
     name = name.toUpperCase();
 
     let colorData = colors.find((element) => element.name == name);
-
+    // this needs to be expanded to have rbg formatted for passing to qs
     debugger;
 
     runTest(colorData.hex.slice(1));
