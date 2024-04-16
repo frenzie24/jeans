@@ -896,7 +896,7 @@ function findColorHeXRBGByName(name) {
     name = name.replaceAll(" ", "");
     name = name.toUpperCase();
 
-    let colorData = color.find((element) => element.name == name);
+    let colorData = colors.find((element) => element.name == name);
 
     debugger;
 
