@@ -1,5 +1,5 @@
 
-[
+let colors =[
     {
       "name": "INDIANRED",
       "hex": "#CD5C5C",
