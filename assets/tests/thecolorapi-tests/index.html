@@ -4,16 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 
-<body>
-    <img id="testImg" src="" alt="triangle with all three sides equal" height="87" width="100" />
+<body class="ui-widget-content" style="border:0;">
 
+    <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+        <span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
+        Simple Colorpicker
+    </p>
+
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="blue"></div>
+
+    <div id="swatch" class="ui-widget-content ui-corner-all"></div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 <script src="script.js"></script>
+<script src="jqColorPicker.js"></script>
 
 </html>
