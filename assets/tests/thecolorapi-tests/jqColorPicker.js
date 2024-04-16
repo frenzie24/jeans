@@ -1,5 +1,7 @@
 // code blantaly stoen from jqueryui.com/slider/#colorpicker
 
+
+
 $(function () {
     debugger;
     function hexFromRGB(r, g, b) {
