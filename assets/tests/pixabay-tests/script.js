@@ -32,7 +32,14 @@ function runTest(keywords) {
         console.log(result);
         // hits are the img obj data we need
         let hits = result.hits;
+        //discard vector hits that are .ai
         hits.forEach(hit => {
+            if(hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
+                console.log('hit about to be removed');
+                console.log(hit);
+                hits.splice(hits.indexOf(hit), 1);
+              
+            }
             console.log(hit);
         });
        
@@ -60,9 +67,11 @@ function runTest(keywords) {
             previewHeight: hit.previewHeight,
             previewWidth: hit.previewWidth,
             fullHDURL: hit.fullHDURL,
+            vectorURL: hit.vectorURL
         }
         */
-        console.log(hitObj)
+      // test for the first element in the hit array
+        $("#testImg").attr('src', hits[0].vectorURL);
         debugger;
     })
 }
