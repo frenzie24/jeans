@@ -5,19 +5,23 @@
 */
 const APIKey = "43404962-ba2a24215101c788c299fa20a";
 //keyword will be passed as an array or obj 
-function runTest(keyword) {
+function runTest(keywords) {
 
-
-    let keywords = "";
-    // keyword = ['yellow', 'red']; => needs to be: 'yellow+red'
-    if (typeof (keyword) == Array) {
+    // declare an empty string to concate our keywords into
+    let keyword = "";
+    // tries to concate keword from elements in passed keywords array
+    // if keywords is not an array we move on
+    try {
         keyword.forEach(key => {
-            keywords += "+" + key; // currently outputs +yellow+red
+            keyword += "+" + key; // currently outputs +yellow+red
         })
+
+        keyword = keywords.slice(1);
+    } catch (err) {
+        keyword = keywords;
+        console.log('error: keyword is not an array, passing single key val');
+        console.log(err);
     }
-    console.log(keywords);
-    keywords = keywords.splice(0, 1, "");
-    console.log(keywords);
 
     //let imgQueryURL = `https://pixabay.com/api/?key=`;
     let imgQueryURL = `https://pixabay.com/api/?key=${APIKey}&q=${keyword}&image_type=photo` //yellow+flowers&image_type=photo`;
