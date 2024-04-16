@@ -23,16 +23,23 @@ function runTest(keywords) {
         console.log(err);
     }
 
-    //let imgQueryURL = `https://pixabay.com/api/?key=`;
-    let imgQueryURL = `https://pixabay.com/api/?key=${APIKey}&q=${keyword}&image_type=photo` //yellow+flowers&image_type=photo`;
+// string for type arg
+    let imgType = 'vector';
+    // query string for legibility
+    let imgQueryURL = `https://pixabay.com/api/?key=${APIKey}&q=${keyword}&image_type=${imgType}` //yellow+flowers&image_type=photo`;
     fetch(imgQueryURL).then(response => response.json()).then(result => {
+        // fetches imQueryURL then parses response to json then we do work on the result
         console.log(result);
+        // hits are the img obj data we need
         let hits = result.hits;
         hits.forEach(hit => {
             console.log(hit);
         });
-        let hit = hits[0];
+       
         /* hit OBJ: */
+        /*
+         let hit = hits[0];
+        example of hit data
         let hitObj = {
             imageSize: hit.imageSize, // what units are these???
             imageHeight: hit.imageHeight,
@@ -54,8 +61,8 @@ function runTest(keywords) {
             previewWidth: hit.previewWidth,
             fullHDURL: hit.fullHDURL,
         }
+        */
         console.log(hitObj)
         debugger;
-        //do work
     })
 }
