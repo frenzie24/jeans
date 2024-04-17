@@ -7,20 +7,19 @@
     <title>GENES</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header class="h-20 text-lg bg-slate-200">Jeans 👖</header>
+  <body class="h-screen flex flex-row flex-wrap bg-pink-400">
+    <header class="text-lg bg-slate-200 w-full flex h-1/6">Jeans 👖</header>
     <!--Hope these comments are heavy enough for you Charles :)-->
-    <main class="flex basis-full flex-row">
-      <!--The id "colorSection" identifies the container for the left area of the viewport that contains the color content-->
-      <section id="colorSection" class="columns-1 w-1/2 h-dvh bg-slate-300">
-        <!--The id "colorContent" identifies the container for all of the color content that will be visibly displayed-->
-        <div id="colorContent">
+    <main class="flex flex-row justify-evenly content-center columns-2 bg-slate-300 w-full h-4/6">
+
+      <!--The id "colorSection" identifies the left area of the viewport that contains all color elements-->
+      <section id="colorSection" class="w-5/12 h-5/6 bg-slate-50">
           <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search button 
                 (which I will add if we choose search over menu)-->
           <div id="colorSearchEls">
             <label for="colorSearch"> Search Colors:</label>
             <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
-            <input type="search" id="colorSearch" />
+            <input type="search" id="colorSearch"/>
             <label for="colorSelect">Select a Color:</label>
             <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
             <input type="color" id="colorSelect" name="colorSelect" value="#ff0000">
@@ -37,10 +36,8 @@
         </div>
       </section>
 
-      <!--The id "imageSection" identifies the container for the right area of the viewport that contains the image content-->
-      <section id="imageSection" class="columns-1 w-1/2 h-dvh bg-slate-400">
-        <!--The id "imageContent" identifies the container for all of the image content that will be visibly displayed-->
-        <div id="imageContent">
+      <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
+      <section id="imageSection" class="w-5/12 h-5/6 bg-slate-50">
           <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
           <div id="imageSearchEls">
             <label for="imageSearch"> Search Images:</label>
@@ -54,7 +51,7 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="text-lg bg-slate-200 w-full h-20"></footer>
     <!--<script src="script.js"></script> -->
   </body>
 </html>
