@@ -77,9 +77,14 @@ function onColorPickerChange(ev) {
     debugger;
 }
 
+function onColorPickerInput(ev) {
+    debugger;
+}
+
 // document ready 
 $(()=>{
     let colorInput = $("#colorInput")
     colorInput.on('click', onColorPickerClick);
-    colorInput.on('change', onColorPickerChange)
+    colorInput.on('change', onColorPickerChange);
+    colorInput.on('input', onColorPickerInput);
 })
