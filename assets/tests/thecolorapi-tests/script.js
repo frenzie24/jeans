@@ -62,3 +62,13 @@ function findColorDataByName(name) {
 
 
 }
+
+// colorPickerClicked
+function onColorPickerClick(ev) {
+    debugger;
+}
+
+// document ready 
+$(()=>{
+    $("#colorInput").on('click', onColorPickerClick);
+})
