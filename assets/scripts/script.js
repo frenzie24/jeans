@@ -165,17 +165,32 @@ function onColorPickerInput(ev) {
 }
 
 function onColorSearch(ev) {
+    ev.preventDefault();
     let colorInput = $("#colorSearch");
     debugger;
     getColorbyHex(findColorDataByName(colorInput.val()));
 }
 
+function onImageSearch(event) {
+    event.preventDefault();
+    let keywords = event.target.value;
+    let vectors = getVectorsByKeywords(keywords);
+    console.log(vectors);
+    debugger;
+}
+
 // document ready 
 $(() => {
     let colorInput = $("#colorSearch")
+    let imageSearch = $("#imageSearch");
+    imageSearch.on('submit',onImageSearch);
     /*colorInput.on('click', onColorPickerClick);
     colorInput.on('change', onColorPickerChange);
     colorInput.on('input', onColorPickerInput);
     */
    colorInput.on('submit', onColorSearch);
 })
+
+$(document).on('submit','#colorSearch',function(){
+    debugger;// code
+ });
