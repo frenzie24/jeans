@@ -204,6 +204,3 @@ $(() => {
    colorInput.on('submit', onColorSearch);
 })
 
-$(document).on('submit','#colorSearch',function(){
-    debugger;// code
- });
