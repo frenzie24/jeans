@@ -1,18 +1,18 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>GENES</title>
-    <link href="./output.css" rel="stylesheet" />
-    <!--<script src="https://cdn.tailwindcss.com"></script>-->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header>Jeans 👖</header>
+    <header class="h-20 text-lg bg-slate-200">Jeans 👖</header>
     <!--Hope these comments are heavy enough for you Charles :)-->
-    <main>
+    <main class="flex basis-full flex-row">
       <!--The id "colorSection" identifies the container for the left area of the viewport that contains the color content-->
-      <section id="colorSection">
+      <section id="colorSection" class="columns-1 w-1/2 h-dvh bg-slate-300">
         <!--The id "colorContent" identifies the container for all of the color content that will be visibly displayed-->
         <div id="colorContent">
           <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search button 
@@ -21,9 +21,9 @@
             <label for="colorSearch"> Search Colors:</label>
             <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
             <input type="search" id="colorSearch" />
-            <label for="favcolor">Select a Color:</label>
+            <label for="colorSelect">Select a Color:</label>
             <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
-            <input type="color" id="colorSelect" name="favcolor" value="#ff0000">
+            <input type="color" id="colorSelect" name="colorSelect" value="#ff0000">
           </div>
           <!--The id "swatchContainer identifies the container for the 3-5 swatches that will be displayed here"-->
           <!--Note: should we create blank elements that the user can see, but that dont yet have colors inside of and then append the color results from user selection...
@@ -37,9 +37,9 @@
         </div>
       </section>
 
-      <!--The id "imageSection" identifies tgjfbgjdbfjadbfjkvbsafkjvhe container for the right area of the viewport that contains the image content-->
-      <section id="imageSection">
-        <!--eirwfnieaprufjnearofnaofkna;lkfnvffvnaek;jlfnasjk;cThe id "imageContent" identifies the container for all of the image content that will be visibly displayed-->
+      <!--The id "imageSection" identifies the container for the right area of the viewport that contains the image content-->
+      <section id="imageSection" class="columns-1 w-1/2 h-dvh bg-slate-400">
+        <!--The id "imageContent" identifies the container for all of the image content that will be visibly displayed-->
         <div id="imageContent">
           <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
           <div id="imageSearchEls">
