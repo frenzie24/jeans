@@ -160,7 +160,7 @@ function onColorPickerInput(ev) {
 
 // document ready 
 $(()=>{
-    let colorInput = $("#colorInput")
+    let colorInput = $("#colorSearch")
     colorInput.on('click', onColorPickerClick);
     colorInput.on('change', onColorPickerChange);
     colorInput.on('input', onColorPickerInput);
