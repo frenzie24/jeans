@@ -1,8 +1,8 @@
 const pk = "43404962-ba2a24215101c788c299fa20a";
 
-function runTest(keywords) {
+// checks if keywords is an array and parses it into a query string 
+function parseKeywords(keywords) {
 
-    // declare an empty string to concate our keywords into
     let keyword = "";
     // tries to concate keword from elements in passed keywords array
     // if keywords is not an array we move on
@@ -18,10 +18,20 @@ function runTest(keywords) {
         console.log(err);
     }
 
-// string for type arg
+    return keyword;
+}
+
+//returns an array of objects containing vector image data
+//only returns image data ending in .svg for vector images
+function getVectorsByKeywords(keywords) {
+
+    // declare an empty string to concate our keywords into
+    let keyword = parseKeywords(keywords);
+
+    // string for type arg
     let imgType = 'vector';
     // query string for legibility
-    let imgQueryURL = `https://pixabay.com/api/?key=${APIKey}&q=${keyword}&image_type=${imgType}` //yellow+flowers&image_type=photo`;
+    let imgQueryURL = `https://pixabay.com/api/?key=${APIKey}&q=${keyword}&image_type=${imgType}`
     fetch(imgQueryURL).then(response => response.json()).then(result => {
         // fetches imQueryURL then parses response to json then we do work on the result
         console.log(result);
@@ -29,15 +39,15 @@ function runTest(keywords) {
         let hits = result.hits;
         //discard vector hits that are .ai
         hits.forEach(hit => {
-            if(hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
+            if (hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
                 console.log('hit about to be removed');
                 console.log(hit);
                 hits.splice(hits.indexOf(hit), 1);
-              
+
             }
             console.log(hit);
         });
-       
+        return hits;
         /* hit OBJ: */
         /* 
          let hit = hits[0];
@@ -65,9 +75,9 @@ function runTest(keywords) {
             vectorURL: hit.vectorURL
         }
         */
-      // test for the first element in the hit array
-        $("#testImg").attr('src', hits[0].vectorURL);
-        debugger;
+        // test for the first element in the hit array
+        //  $("#testImg").attr('src', hits[0].vectorURL);
+
     })
 }
 
