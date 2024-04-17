@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>GENES</title>
-  <link href="./output.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -24,7 +23,7 @@
           <label for="colorSearch"> Search Colors:</label>
           <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
           <!--Note: Do you guys think it would be better to have this be a drop-down menu instead of a search?-->
-          <input type="search" id="colorSearch" />
+          <input type="text" id="colorSearch" />
         </form>
         <!--The id "swatchContainer identifies the container for the 3-5 swatches that will be displayed here"-->
         <!--Note: should we create blank elements that the user can see, but that dont yet have colors inside of and then append the color results from user selection...
@@ -43,13 +42,13 @@
       <!--The id "imageContent" identifies the container for all of the image content that will be visibly displayed-->
       <div id="imageContent">
         <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
-        <div id="imageSearchEls">
+        <form id="imageSearchEls">
           <label for="imageSearch"> Search Images:</label>
           <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
-          <input type="search" id="imageSearch" />
+          <input type="text" id="imageSearch" />
           <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
           <button id="imageSearchBtn">Search</button>
-        </div>
+        </form>
         <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
         <div id="imageContainer"></div>
       </div>

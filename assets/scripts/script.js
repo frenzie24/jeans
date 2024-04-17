@@ -173,6 +173,7 @@ function onColorSearch(ev) {
 
 function onImageSearch(event) {
     event.preventDefault();
+    debugger;
     let keywords = event.target.value;
     let vectors = getVectorsByKeywords(keywords);
     console.log(vectors);
@@ -183,7 +184,11 @@ function onImageSearch(event) {
 $(() => {
     let colorInput = $("#colorSearch")
     let imageSearch = $("#imageSearch");
-    imageSearch.on('submit',onImageSearch);
+    imageSearch.on("keydown", function (e) {
+        if (e.keyCode == 13) {
+            onImageSearch(e);
+        }
+    });
     /*colorInput.on('click', onColorPickerClick);
     colorInput.on('change', onColorPickerChange);
     colorInput.on('input', onColorPickerInput);
