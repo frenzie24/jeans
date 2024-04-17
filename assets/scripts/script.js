@@ -93,7 +93,7 @@ let ps = 'https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100
 &format=html"
 */
 
-function getColorbyText(colorData) {
+function getColorbyHex(colorData) {
     let qs = `https://www.thecolorapi.com/id?hex=${colorData}&format=json`
     fetch(qs).then(result => result.json()).then(result => {
     });
@@ -110,8 +110,11 @@ function getColorbyText(colorData) {
 &count=6'
 */
 
-function runSchemeTest(colorData) {
+function getSchemeByHex(colorData) {
     fetch(ps).then(result => result.json()).then(result => {
+        debugger;
+        // may need to set up async and set a variable instead of return
+        return result
     });
 }
 
@@ -126,7 +129,7 @@ const stringToColour = (str) => {
         const value = (hash >> (i * 8)) & 0xff
         colour += value.toString(16).padStart(2, '0')
     }
-    runTest(colour);
+    getColorByHex(colour);
 }
 
 
@@ -139,23 +142,25 @@ function findColorDataByName(name) {
     let colorData = colors.find((element) => element.name == name);
     // this needs to be expanded to have rbg formatted for passing to qs
 
-    runTest(colorData.hex.slice(1));
+    getColorByHex(colorData.hex.slice(1));
 
 
 }
 
 // colorPickerClicked
 function onColorPickerClick(ev) {
+    // this is when the color picker element is fist clicked
 }
 
 // when color picker closes and value changes, parse value to workable string and run a test
 function onColorPickerChange(ev) {
     let colorHash = ev.target.value;
     colorHash = colorHash.slice(1);
-    runTest(colorHash);
+    getColorByHex(colorHash);
 }
 
 function onColorPickerInput(ev) {
+    // this is when a color value is input
 }
 
 // document ready 
