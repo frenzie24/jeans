@@ -31,7 +31,7 @@ function getVectorsByKeywords(keywords) {
     // string for type arg
     let imgType = 'vector';
     // query string for legibility
-    let imgQueryURL = `https://pixabay.com/api/?key=${APIKey}&q=${keyword}&image_type=${imgType}`
+    let imgQueryURL = `https://pixabay.com/api/?key=${pk}&q=${keyword}&image_type=${imgType}`
     fetch(imgQueryURL).then(response => response.json()).then(result => {
         // fetches imQueryURL then parses response to json then we do work on the result
         console.log(result);
