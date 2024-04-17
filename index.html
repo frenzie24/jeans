@@ -1,59 +1,67 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>GENES</title>
-    <link href="./output.css" rel="stylesheet"/>
-    <!--<script src="https://cdn.tailwindcss.com"></script>-->
-  </head>
-  <body>
 
-    <header>Jeans 👖</header>
-    <!--Hope these comments are heavy enough for you Charles :)-->
-    <main>
-        <!--The id "colorSection" identifies the container for the left area of the viewport that contains the color content-->
-      <section id="colorSection">
-        <!--The id "colorContent" identifies the container for all of the color content that will be visibly displayed-->
-        <div id="colorContent">
-            <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search button 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>GENES</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <header>Jeans 👖</header>
+  <!--Hope these comments are heavy enough for you Charles :)-->
+  <main>
+    <!--The id "colorSection" identifies the container for the left area of the viewport that contains the color content-->
+    <section id="colorSection">
+      <!--The id "colorContent" identifies the container for all of the color content that will be visibly displayed-->
+      <div id="colorContent">
+        <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search button 
                 (which I will add if we choose search over menu)-->
-            <div id="colorSearchEls">
-                <label for="colorSearch"> Search Colors:</label>
-                    <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
-                    <!--Note: Do you guys think it would be better to have this be a drop-down menu instead of a search?-->
-                <input type="search" id="colorSearch" />
-            </div>
-                <!--The id "swatchContainer identifies the container for the 3-5 swatches that will be displayed here"-->
-                <!--Note: should we create blank elements that the user can see, but that dont yet have colors inside of and then append the color results from user selection...
+        <form id="colorSearchEls">
+          <label for="colorSearch"> Search Colors:</label>
+          <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
+          <!--Note: Do you guys think it would be better to have this be a drop-down menu instead of a search?-->
+          <input type="text" id="colorSearch" />
+        </form>
+        <!--The id "swatchContainer identifies the container for the 3-5 swatches that will be displayed here"-->
+        <!--Note: should we create blank elements that the user can see, but that dont yet have colors inside of and then append the color results from user selection...
                     or should the swatches be fully non existant until user selection and then appended?-->
-                <div id="swatchContainer">
-                    <!--I think you guys understand what the ids for swatch 1, 2, 3 are...-->
-                    <div id="swatch1"></div>
-                    <div id="swatch2"></div>
-                    <div id="swatch3"></div>
-                </div>
+        <div id="swatchContainer">
+          <!--I think you guys understand what the ids for swatch 1, 2, 3 are...-->
+          <div id="swatch1"></div>
+          <div id="swatch2"></div>
+          <div id="swatch3"></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-        <!--The id "imageSection" identifies the container for the right area of the viewport that contains the image content-->
-      <section id="imageSection">
-        <!--The id "imageContent" identifies the container for all of the image content that will be visibly displayed-->
-        <div id="imageContent">
-            <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
-            <div id="imageSearchEls">
-                <label for="imageSearch"> Search Images:</label>
-                <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
-                <input type="search" id="imageSearch" />
-                <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
-                <button id="imageSearchBtn">Search</button>
-            </div>
-            <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
-            <div id="imageContainer"></div>
-        </div>
-      </section>
-    </main>
-    <footer></footer>
-   <!--<script src="script.js"></script> -->
-  </body>
+    <!--The id "imageSection" identifies tgjfbgjdbfjadbfjkvbsafkjvhe container for the right area of the viewport that contains the image content-->
+    <section id="imageSection">
+      <!--The id "imageContent" identifies the container for all of the image content that will be visibly displayed-->
+      <div id="imageContent">
+        <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
+        <form id="imageSearchEls">
+          <label for="imageSearch"> Search Images:</label>
+          <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
+          <input type="text" id="imageSearch" />
+          <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
+          <button id="imageSearchBtn">Search</button>
+        </form>
+        <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
+        <div id="imageContainer"></div>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script src="./assets/scripts/toolBox.js"></script>
+  <script src="./assets/scripts/colors.js"></script>
+  <script src="./assets/scripts/script.js"></script>
+</body>
+
 </html>

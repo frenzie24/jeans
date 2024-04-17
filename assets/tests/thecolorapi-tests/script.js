@@ -62,3 +62,29 @@ function findColorDataByName(name) {
 
 
 }
+
+// colorPickerClicked
+function onColorPickerClick(ev) {
+
+    debugger;
+}
+
+// when color picker closes and value changes, parse value to workable string and run a test
+function onColorPickerChange(ev) {
+    let colorHash = ev.target.value;
+    colorHash = colorHash.slice(1);
+    runTest(colorHash);
+    debugger;
+}
+
+function onColorPickerInput(ev) {
+    debugger;
+}
+
+// document ready 
+$(()=>{
+    let colorInput = $("#colorInput")
+    colorInput.on('click', onColorPickerClick);
+    colorInput.on('change', onColorPickerChange);
+    colorInput.on('input', onColorPickerInput);
+})
