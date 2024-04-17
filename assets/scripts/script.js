@@ -193,9 +193,9 @@ $(() => {
     colorInput.on('change', onColorPickerChange);
     colorInput.on('input', onColorPickerInput);
     */
-   colorInput.on('submit', onColorSearch);
-})
-
-$(document).on('submit','#colorSearch',function(){
-    debugger;// code
- });
+    colorInput.on("keydown", function (e) {
+        if (e.keyCode == 13) {
+            onColorSearch(e)
+        }
+    });
+});
