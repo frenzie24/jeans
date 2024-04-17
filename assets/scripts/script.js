@@ -166,13 +166,16 @@ function onColorPickerInput(ev) {
 
 function onColorSearch(ev) {
     let colorInput = $("#colorSearch");
-    getColorbyHex(findColorDataByName(colorInput.val())); 
+    debugger;
+    getColorbyHex(findColorDataByName(colorInput.val()));
 }
 
 // document ready 
-$(()=>{
+$(() => {
     let colorInput = $("#colorSearch")
-    colorInput.on('click', onColorPickerClick);
+    /*colorInput.on('click', onColorPickerClick);
     colorInput.on('change', onColorPickerChange);
     colorInput.on('input', onColorPickerInput);
+    */
+   colorInput.on('submit', onColorSearch);
 })
