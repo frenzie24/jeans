@@ -28,10 +28,10 @@ function getVectorsByKeywords(keywords) {
     // declare an empty string to concate our keywords into
     let keyword = parseKeywords(keywords);
 
-// string for type arg
+    // string for type arg
     let imgType = 'vector';
     // query string for legibility
-    let imgQueryURL = `https://pixabay.com/api/?key=${APIKey}&q=${keyword}&image_type=${imgType}` 
+    let imgQueryURL = `https://pixabay.com/api/?key=${APIKey}&q=${keyword}&image_type=${imgType}`
     fetch(imgQueryURL).then(response => response.json()).then(result => {
         // fetches imQueryURL then parses response to json then we do work on the result
         console.log(result);
@@ -39,11 +39,11 @@ function getVectorsByKeywords(keywords) {
         let hits = result.hits;
         //discard vector hits that are .ai
         hits.forEach(hit => {
-            if(hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
+            if (hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
                 console.log('hit about to be removed');
                 console.log(hit);
                 hits.splice(hits.indexOf(hit), 1);
-              
+
             }
             console.log(hit);
         });
@@ -75,9 +75,9 @@ function getVectorsByKeywords(keywords) {
             vectorURL: hit.vectorURL
         }
         */
-      // test for the first element in the hit array
-      //  $("#testImg").attr('src', hits[0].vectorURL);
-        debugger;
+        // test for the first element in the hit array
+        //  $("#testImg").attr('src', hits[0].vectorURL);
+
     })
 }
 
@@ -116,3 +116,11 @@ function runSchemeTest(colorData) {
         debugger;
     });
 }
+
+// document ready 
+$(()=>{
+    let colorInput = $("#colorInput")
+    colorInput.on('click', onColorPickerClick);
+    colorInput.on('change', onColorPickerChange);
+    colorInput.on('input', onColorPickerInput);
+})
