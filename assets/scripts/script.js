@@ -1,8 +1,7 @@
 const pk = "43404962-ba2a24215101c788c299fa20a";
 
-function runTest(keywords) {
+function parseKeywords(keywords) {
 
-    // declare an empty string to concate our keywords into
     let keyword = "";
     // tries to concate keword from elements in passed keywords array
     // if keywords is not an array we move on
@@ -17,6 +16,14 @@ function runTest(keywords) {
         console.log('error: keyword is not an array, passing single key val');
         console.log(err);
     }
+
+    return keyword;
+}
+
+function getVectorsByKeywords(keywords) {
+
+    // declare an empty string to concate our keywords into
+    let keyword = parseKeywords(keywords);
 
 // string for type arg
     let imgType = 'vector';
