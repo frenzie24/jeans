@@ -20,8 +20,10 @@
           <div id="colorSearchEls">
             <label for="colorSearch"> Search Colors:</label>
             <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
-            <!--Note: Do you guys think it would be better to have this be a drop-down menu instead of a search?-->
             <input type="search" id="colorSearch" />
+            <label for="favcolor">Select a Color:</label>
+            <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
+            <input type="color" id="colorSelect" name="favcolor" value="#ff0000">
           </div>
           <!--The id "swatchContainer identifies the container for the 3-5 swatches that will be displayed here"-->
           <!--Note: should we create blank elements that the user can see, but that dont yet have colors inside of and then append the color results from user selection...
