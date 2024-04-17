@@ -1,0 +1,33 @@
+/* styles stolen from jqueryui with permission */
+
+#red, #green, #blue {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin: 15px;
+  }
+  #swatch {
+    width: 120px;
+    height: 100px;
+    margin-top: 18px;
+    margin-left: 350px;
+    background-image: none;
+  }
+  #red .ui-slider-range { background: #ef2929; }
+  #red .ui-slider-handle { border-color: #ef2929; }
+  #green .ui-slider-range { background: #8ae234; }
+  #green .ui-slider-handle { border-color: #8ae234; }
+  #blue .ui-slider-range { background: #729fcf; }
+  #blue .ui-slider-handle { border-color: #729fcf; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    font-size: 1em;
+}
+
+.ui-draggable, .ui-droppable {
+    background-position: top;
+}
