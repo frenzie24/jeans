@@ -173,6 +173,7 @@ function onColorSearch(ev) {
 
 function onImageSearch(event) {
     event.preventDefault();
+    debugger;
     let keywords = event.target.value;
     let vectors = getVectorsByKeywords(keywords);
     console.log(vectors);
