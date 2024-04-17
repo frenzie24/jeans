@@ -69,9 +69,11 @@ function onColorPickerClick(ev) {
     debugger;
 }
 
-
+// when color picker closes and value changes, parse value to workable string and run a test
 function onColorPickerChange(ev) {
-
+    let colorHash = ev.target.value;
+    colorHash = colorHash.slice(1);
+    runTest(colorHash);
     debugger;
 }
 
