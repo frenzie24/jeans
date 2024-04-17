@@ -49,7 +49,7 @@ const stringToColour = (str) => {
     runTest(colour);
 }
 // returns a obj with color data (hex/rgb/name/families) based on passed string
-function findColorDataName(name) {
+function findColorDataByName(name) {
     // removes all white space
     name = name.replaceAll(" ", "");
     name = name.toUpperCase();
