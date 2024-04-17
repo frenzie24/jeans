@@ -180,6 +180,12 @@ function onImageSearch(event) {
     debugger;
 }
 
+function onImageSearchClick(event) {
+    // returns vectors based on string in the image search input
+    event.preventDefault();
+    return getVectorsByKeywords($("#imageSearch").val());
+}
+
 // document ready 
 $(() => {
     let colorInput = $("#colorSearch")
@@ -189,6 +195,8 @@ $(() => {
             onImageSearch(e);
         }
     });
+    //add click listener to imageSearchBtn
+    $('#imageSearchBtn').on('click', onImageSearchClick);
     /*colorInput.on('click', onColorPickerClick);
     colorInput.on('change', onColorPickerChange);
     colorInput.on('input', onColorPickerInput);
