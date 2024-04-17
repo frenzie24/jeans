@@ -93,7 +93,7 @@ let ps = 'https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100
 &format=html"
 */
 
-function getColorbyHex(colorData) {
+function getColorByHex(colorData) {
     let qs = `https://www.thecolorapi.com/id?hex=${colorData}&format=json`
     fetch(qs).then(result => result.json()).then(result => {
         debugger;
@@ -168,7 +168,7 @@ function onColorSearch(ev) {
     ev.preventDefault();
     let colorInput = $("#colorSearch");
     debugger;
-    getColorbyHex(findColorDataByName(colorInput.val()));
+    findColorDataByName(colorInput.val());
 }
 
 function onImageSearch(event) {
