@@ -38,15 +38,17 @@ function getVectorsByKeywords(keywords) {
         // hits are the img obj data we need
         let hits = result.hits;
         //discard vector hits that are .ai
-        hits.forEach(hit => {
-            if (hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
-                console.log('hit about to be removed');
-                console.log(hit);
-                hits.splice(hits.indexOf(hit), 1);
+        // hits.forEach(hit => {
+        //     if (hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
+        //         console.log('hit about to be removed');
+        //         console.log(hit);
+        //         debugger;
+        //         hits.splice(hits.indexOf(hit), 1);
+        //         debugger;
+        //     }
 
-            }
-            console.log(hit);
-        });
+        hits = hits.filter(hit => hit.vectorURL && hit.type == 'vector/svg');
+        console.log(hits);
         setItem('hits', hits);
         /* for (let i = 0; i < 6; i++) {
              let imageEl = $(`#imageResult${i}`); 
@@ -55,35 +57,38 @@ function getVectorsByKeywords(keywords) {
  */
         populateImageElements(hits);
         debugger;
-        /* hit OBJ: */
-        /* 
-         let hit = hits[0];
-        example of hit data
-        let hitObj = {
-            imageSize: hit.imageSize, // what units are these???
-            imageHeight: hit.imageHeight,
-            imageWidth: hit.imageWidth,
-            tags: hit.tags,
-            type: hit.type,
-            user: hit.user,
-            userImageURL: hit.user,
-            user_id: hit.user_id,
-            imageURL: hit.imageURL,
-            largeImageURL: hit.largeImageURL,
-            id: hit.id,
-            id_hash: hit.id_hash,
-            webformatHeight: hit.webformatHeight,
-            webformatWidth: hit.webformatWidth,
-            pageURL: hit.pageURL,
-            previewURL: hit.previewURL,
-            previewHeight: hit.previewHeight,
-            previewWidth: hit.previewWidth,
-            fullHDURL: hit.fullHDURL,
-            vectorURL: hit.vectorURL
-        }
-        */
-        // test for the first element in the hit array
-        //  $("#testImg").attr('src', hits[0].vectorURL);
+    });
+
+}
+/* hit OBJ: */
+/* 
+ let hit = hits[0];
+example of hit data
+let hitObj = {
+    imageSize: hit.imageSize, // what units are these???
+    imageHeight: hit.imageHeight,
+    imageWidth: hit.imageWidth,
+    tags: hit.tags,
+    type: hit.type,
+    user: hit.user,
+    userImageURL: hit.user,
+    user_id: hit.user_id,
+    imageURL: hit.imageURL,
+    largeImageURL: hit.largeImageURL,
+    id: hit.id,
+    id_hash: hit.id_hash,
+    webformatHeight: hit.webformatHeight,
+    webformatWidth: hit.webformatWidth,
+    pageURL: hit.pageURL,
+    previewURL: hit.previewURL,
+    previewHeight: hit.previewHeight,
+    previewWidth: hit.previewWidth,
+    fullHDURL: hit.fullHDURL,
+    vectorURL: hit.vectorURL
+}
+*/
+// test for the first element in the hit array
+//  $("#testImg").attr('src', hits[0].vectorURL);
 
     })
 }
@@ -141,6 +146,8 @@ $(() => {
         }
     });
 
+
     $('#imageSearchBtn').on('click', onImageSearchClick);
+
 
 });
