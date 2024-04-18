@@ -97,7 +97,7 @@ $(() => {
     let colorInput = $("#colorSearch")
     
     //add click listener to imageSearchBtn
-    $('#imageSearchBtn').on('click', onImageSearchClick);
+  
     /*colorInput.on('click', onColorPickerClick);
     colorInput.on('change', onColorPickerChange);
     colorInput.on('input', onColorPickerInput);
