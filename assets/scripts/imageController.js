@@ -48,6 +48,12 @@ function getVectorsByKeywords(keywords) {
             console.log(hit);
         });
         setItem('hits', hits);
+        for (let i = 0; i < 6; i++) {
+            let imageEl = $(`#imageResult${i}`); 
+            $(`#imageResult${i}`).attr('src', hits.vectorURL);
+        }
+
+        debugger;
         /* hit OBJ: */
         /* 
          let hit = hits[0];
