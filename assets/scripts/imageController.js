@@ -90,8 +90,6 @@ let hitObj = {
 // test for the first element in the hit array
 //  $("#testImg").attr('src', hits[0].vectorURL);
 
-    })
-}
 
 function populateImageElements(vectors) {
     let featured = $(`#imageResult${0}`);
