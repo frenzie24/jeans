@@ -8,8 +8,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <header class="flex bg-slate-200 h-14">
+  <header class="flex flex-row justify-between bg-slate-200 h-14">
   <h1 class="flex items-center text-3xl ml-8">Jeans 👖</h1>
+  <nav class="flex flex-row justify-evenly items-center w-1/3">
+    <!--The id "helpBtn" identifies the nav Need Help? button (maybe the modal can be tied to this and display instructions?)-->
+    <button id="helpBtn">Need Help?</button>
+    <!--The id "creatorsBtn" identifies the nav creators button (drop down menu w/ our names?)-->
+    <button id="creatorsBtn">Creators</button>
+    <!--The id "checkBtn" identifies the nav Check Us Out button (drop down menu w/ our GitHub names or linkedIn etc.?)-->
+    <button id="checkBtn">Check Us Out</button>
+  </nav>
   </header>
 
   <body class="min-h-screen flex flex-col bg-pink-400">
@@ -25,12 +33,12 @@
           <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
             <form id="colorSearchEls">
               <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
-              <input type="search" id="colorSearch"/>
+              <input class="py-1 px-3 rounded-full" type="search" id="colorSearch"/>
               <!--The id "colorSearchBtn" identifies the button the user will press to initiate the search for the typed color-->
               <button id="colorSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Search</button>
               <label for="colorSelect">Select a Color:</label>
               <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
-              <input type="color" id="colorSelect" name="colorSelect" value="#ff0000">
+              <input class="rounded-sm " type="color" id="colorSelect" name="colorSelect" value="#ff0000">
               <!--The id "colorSelectBtn" identifies the button the user will press to initiate the search for the selected/ picked color-->
               <button id="colorSelectBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Search</button>
             </form>
@@ -51,7 +59,7 @@
         <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
         <form id="imageSearchEls">
           <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
-          <input type="search" id="imageSearch" />
+          <input class="py-1 px-3 rounded-full" type="search" id="imageSearch" />
           <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
           <button id="imageSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Search</button>
         </form>
