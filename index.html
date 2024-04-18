@@ -132,12 +132,12 @@
       <h2 class="flex justify-around text-3xl my-8">Vector Image Generator</h2>
       
       <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
-      <form id="imageSearchEls">
+      <form id="imageSearchEls" class="flex flex-row flex-wrap justify-center frow mx-3">
         <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
-        <input class="py-1 px-3 rounded-full" type="search" id="imageSearch" />
+        <input class="py-1 px-3 rounded-full grow" type="search" id="imageSearch" />
         <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
         <button id="imageSearchBtn"
-          class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded-full">Search</button>
+          class="bg-blue-500 flex hover:bg-blue-700 text-white py-1 px-4 ml-3 rounded-full">Search</button>
       </form>
       <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
         <div id="imageContainer" class="grid grid-cols-5 gap-4 mx-4 my-4">
