@@ -8,19 +8,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <header class="text-lg bg-slate-200 w-full h-14 ">Jeans 👖</header>
+  <header class="flex bg-slate-200 h-14">
+  <h1 class="flex items-center text-3xl ml-8">Jeans 👖</h1>
+  </header>
 
   <body class="min-h-screen flex flex-col bg-pink-400">
 
-    <main class="flex flex-row flex-grow justify-evenly items-center bg-slate-300">
+    <main class="flex flex-row flex-grow justify-evenly items-start bg-slate-300">
 
       <!--LEFT SECTION/ COLOR SECTION OF PROJECT-->
 
       <!--The id "colorSection" identifies the left area of the viewport that contains all color elements-->
-      <section id="colorSection" class="w-5/12 h-5/6 bg-slate-200">
-          <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search button-->
+      <section id="colorSection" class="w-5/12 bg-slate-200 my-8">
+          <h2>Swatch Generator</h2>
+          <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
             <form id="colorSearchEls">
-              <label for="colorSearch"> Search Colors:</label>
               <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
               <input type="search" id="colorSearch"/>
               <!--The id "colorSearchBtn" identifies the button the user will press to initiate the search for the typed color-->
@@ -38,10 +40,10 @@
       <!--RIGHT SECTION/ IMAGE SECTION OF PROJECT-->
 
     <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
-    <section id="imageSection" class="w-5/12 h-5/6 bg-slate-200">
+    <section id="imageSection" class="w-5/12 bg-slate-200 my-8">
+        <h2>Vector Image Generator</h2>
         <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
         <form id="imageSearchEls">
-          <label for="imageSearch">Search Images:</label>
           <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
           <input type="search" id="imageSearch" />
           <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
