@@ -15,71 +15,100 @@
   <header class="flex flex-row justify-between bg-slate-200 h-20 w-full">
     <h1 class="flex items-center text-3xl ml-8">Jeans 👖</h1>
     <nav class="flex flex-row justify-evenly items-center w-1/3">
-      <!--The id "helpBtn" identifies the nav Need Help? button (maybe the modal can be tied to this and display instructions?)-->
-      <button id="helpBtn">Need Help?</button>
 
-      <!--The id "creatorsBtn" identifies the nav creators button (drop down menu w/ our names?)-->
-      <button id="creatorsBtn" data-dropdown-toggle="dropdown"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 py-1 px-4 rounded-full text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button">Creators<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="none" viewBox="0 0 10 6">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="m1 1 4 4 4-4" />
-        </svg>
+
+      <button id="openModalBtn"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 py-1 px-4 rounded-full text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Instructions
       </button>
-      <!--Dropdown menu for "creatorsBtn" nav button-->
-      <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Charles
-              Gross</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dylan
-              Thrasher</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Breeanna
-              Nouskhajian</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Stephen
-              Jastrow</a>
-          </li>
-        </ul>
+      <!-- Modal Wrapper -->
+      <div id="modal" class="hidden fixed z-10 inset-0">
+        <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity">
+          <!-- Modal Box -->
+          <div class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3">
+            <h3 class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase">
+              Page Instructions
+            </h3>
+            <p class="text-center mt-14 text-xl text-gray-500">
+              For generating color swatches - Either type a color in the
+              search bar or select a color from the "Select a Color" preview
+              window.
+              <br />
+              For generating a vector image - Type in your search and click
+              the "Search Button".
+            </p>
+            <button id="closeModalBtn" type="button"
+              class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider">
+              Close
+            </button>
+          </div>
+        </div>
       </div>
 
-      <!--The id "stuffBtn" identifies the nav Our Stuff button (drop down menu w/ our GitHub names?)-->
-      <button id="stuffBtn" data-dropdown-toggle="dropdown"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 py-1 px-4 rounded-full text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button">Our Stuff<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="none" viewBox="0 0 10 6">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="m1 1 4 4 4-4" />
-        </svg>
-      </button>
+        <button
+          id="creatorsOpenModalBtn"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 py-1 px-4 rounded-full text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Creators
+        </button>
+        <!-- Modal Wrapper -->
+        <div id="creatorsModal" class="hidden fixed z-10 inset-0">
+          <div
+            class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity"
+          >
+            <!-- Modal Box -->
+            <div
+              class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3"
+            >
+              <h3
+                class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase"
+                id="modal-title"
+              >
+                Creators
+              </h3>
+              <br>
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-gray-500"
+                aria-labelledby="dropdownDefaultButton"
+              >
+                <li>
+                  <a
+                    href="https://github.com/sjastrow92"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Stephen Jastrow</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/Dylan-Thrasher"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Dylan Thrasher</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/frenzie24"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Charles Gross</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/BreeNous"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Breeanna Nouskhajian</a
+                  >
+                </li>
+              </ul>
 
-      <!-- Dropdown menu for "stuffBtn" nav button-->
-      <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Charles
-              Gross</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dylan
-              Thrasher</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Breeanna
-              Nouskhajian</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Stephen
-              Jastrow</a>
-          </li>
-        </ul>
+            <button id="creatorsCloseModalBtn" type="button"
+              class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider">
+              Close
+            </button>
+          </div>
+        </div>
       </div>
+
     </nav>
   </header>
   <main class="flex flex-row flex-wrap justify-evenly items-start bg-slate-300 w-full my-8">
@@ -105,19 +134,19 @@
       <!--The id "swatchContainer" identifies the container for the swatches that will be displayed inside"-->
       <div id="swatchContainer" class="grid grid-cols-1 grid-rows-5 gap-4 mx-4">
         <div>
-          swatch image 1 placeholder
+          <img src="testColorImages/test01.png">
         </div>
         <div>
-          swatch 2 placeholder
+          <img src="testColorImages/test02.png">
         </div>
         <div>
-          swatch 3 placeholder
+          <img src="testColorImages/test03.png">
         </div>
         <div>
-          swatch 4 placeholder
+          <img src="testColorImages/test01.png">
         </div>
         <div>
-          swatch 5 placeholder
+          <img src="testColorImages/test02.png">
         </div>
       </div>
       <br>
@@ -130,7 +159,7 @@
     <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
     <section id="imageSection" class="flex flex-col h-full w-5/12 bg-slate-200 rounded-3xl">
       <h2 class="flex justify-around text-3xl my-8">Vector Image Generator</h2>
-      
+
       <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
       <form id="imageSearchEls" class="flex flex-row flex-wrap justify-center frow mx-3">
         <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
@@ -140,54 +169,80 @@
           class="bg-blue-500 flex hover:bg-blue-700 text-white py-1 px-4 ml-3 rounded-full">Search</button>
       </form>
       <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
-        <div id="imageContainer" class="grid grid-cols-5 gap-4 mx-4 my-4">
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-            </div>
+      <div id="imageContainer" class="flex flex-row flex-nowrap mx-4 my-4 overflow-auto">
+        <div id="imageResultsCard1" class="">
+          <img id="imageResult1" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
         </div>
-        <div class="grid gap-4">
-          <div class="mx-4 mb-4">
-              <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
-          </div>
+        <div id="imageResultsCard2">
+          <img id="imageResult2" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
         </div>
-        
-        <!--The id "favoriteImages" identifies the container that the users favorite images will be displayed inside"-->
-          <div id="favoriteImages" class="grid grid-cols-5 grid-rows-* gap-4 mx-4 mb-4">
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-          
-          </div>
+        <div id="imageResultsCard3">
+          <img id="imageResult3" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
         </div>
+        <div id="imageResultsCard4">
+          <img id="imageResult4" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+        </div>
+        <div id="imageResultsCard5">
+          <img id="imageResult5" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
+        </div>
+        <div id="imageResultsCard1">
+          <img id="imageResult1" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+        </div>
+        <div id="imageResultsCard2">
+          <img id="imageResult2"" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+        </div>
+        <div id="imageResultsCard3">
+          <img id="imageResult3" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
+        </div>
+        <div id="imageResultsCard4">
+          <img id="imageResult4" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+        </div>
+        <div id="imageResultsCard5">
+          <img id="imageResult5" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
+        </div>
+      </div>
+      <div class="grid gap-4">
+        <div class="mx-4 mb-4" id="imageResultsCard0">
+          <img class="h-auto max-w-full rounded-lg" id="imageResult0"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
+        </div>
+      </div>
+
+      <!--The id "favoriteImages" identifies the container that the users favorite images will be displayed inside"-->
+      <div id="favoriteImages" class="grid grid-cols-5 grid-rows-* gap-4 mx-4 mb-4">
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+
+      </div>
+      </div>
     </section>
 
   </main>
@@ -203,6 +258,7 @@
   <script src="./assets/scripts/colors.js"></script>
   <script src="./assets/scripts/imageController.js"></script>
   <script src="./assets/scripts/colorController.js"></script>
+  <script src="./assets/scripts/modal.js"></script>
 </body>
 
 </html>

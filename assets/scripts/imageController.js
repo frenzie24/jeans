@@ -38,47 +38,89 @@ function getVectorsByKeywords(keywords) {
         // hits are the img obj data we need
         let hits = result.hits;
         //discard vector hits that are .ai
-        hits.forEach(hit => {
-            if (hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
-                console.log('hit about to be removed');
-                console.log(hit);
-                hits.splice(hits.indexOf(hit), 1);
+        // hits.forEach(hit => {
+        //     if (hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
+        //         console.log('hit about to be removed');
+        //         console.log(hit);
+        //         debugger;
+        //         hits.splice(hits.indexOf(hit), 1);
+        //         debugger;
+        //     }
 
-            }
-            console.log(hit);
-        });
+        hits = hits.filter(hit => hit.vectorURL && hit.type == 'vector/svg');
+        console.log(hits);
         setItem('hits', hits);
-        /* hit OBJ: */
-        /* 
-         let hit = hits[0];
-        example of hit data
-        let hitObj = {
-            imageSize: hit.imageSize, // what units are these???
-            imageHeight: hit.imageHeight,
-            imageWidth: hit.imageWidth,
-            tags: hit.tags,
-            type: hit.type,
-            user: hit.user,
-            userImageURL: hit.user,
-            user_id: hit.user_id,
-            imageURL: hit.imageURL,
-            largeImageURL: hit.largeImageURL,
-            id: hit.id,
-            id_hash: hit.id_hash,
-            webformatHeight: hit.webformatHeight,
-            webformatWidth: hit.webformatWidth,
-            pageURL: hit.pageURL,
-            previewURL: hit.previewURL,
-            previewHeight: hit.previewHeight,
-            previewWidth: hit.previewWidth,
-            fullHDURL: hit.fullHDURL,
-            vectorURL: hit.vectorURL
-        }
-        */
-        // test for the first element in the hit array
-        //  $("#testImg").attr('src', hits[0].vectorURL);
+        /* for (let i = 0; i < 6; i++) {
+             let imageEl = $(`#imageResult${i}`); 
+             $(`#imageResult${i}`).attr('src', hits[i].vectorURL);
+         }
+ */
+        populateImageElements(hits);
+        debugger;
+    });
+
+}
+/* hit OBJ: */
+/* 
+ let hit = hits[0];
+example of hit data
+let hitObj = {
+    imageSize: hit.imageSize, // what units are these???
+    imageHeight: hit.imageHeight,
+    imageWidth: hit.imageWidth,
+    tags: hit.tags,
+    type: hit.type,
+    user: hit.user,
+    userImageURL: hit.user,
+    user_id: hit.user_id,
+    imageURL: hit.imageURL,
+    largeImageURL: hit.largeImageURL,
+    id: hit.id,
+    id_hash: hit.id_hash,
+    webformatHeight: hit.webformatHeight,
+    webformatWidth: hit.webformatWidth,
+    pageURL: hit.pageURL,
+    previewURL: hit.previewURL,
+    previewHeight: hit.previewHeight,
+    previewWidth: hit.previewWidth,
+    fullHDURL: hit.fullHDURL,
+    vectorURL: hit.vectorURL
+}
+*/
+// test for the first element in the hit array
+//  $("#testImg").attr('src', hits[0].vectorURL);
 
     })
+}
+
+function populateImageElements(vectors) {
+    let featured = $(`#imageResult${0}`);
+    featured.attr('src', vectors[0].vectorURL);
+
+    let iamgeContainer = $("#imageContainer");
+    iamgeContainer.empty();
+    iamgeContainer.addClass(`flex flex-row flex-nowrap mx-4 my-4 overflow-auto`)
+    const classString = `mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
+    const imageString = `imageResults`;
+    const cardSting = `${imageString}Card`;
+
+    let vectorCards = [];
+    for (let i = 1; i < vectors.length; i++) {
+        let card = generateElement("div", { id: `${cardSting}${i}` })
+        let data = {
+            class: classString,
+            src: vectors[i].vectorURL,
+            id: `${imageString}${i}`,
+            alt: vectors[i].tags
+        }
+
+        card.append(generateElement('img', data));
+
+        vectorCards.push(card);
+        //card.parent().append(card);
+    }
+
+    iamgeContainer.append(vectorCards);
 }
 
 function onImageSearch(event) {
@@ -103,7 +145,9 @@ $(() => {
             onImageSearch(e);
         }
     });
-    
+
+
     $('#imageSearchBtn').on('click', onImageSearchClick);
- 
+
+
 });
