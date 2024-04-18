@@ -13,10 +13,8 @@ styling color and image search.
 
 ## REQUIREMENTS
 
-- Users need to be able to select a color palette<br>
-- Selected color palette needs to be displayed with all swatches<br>
+- Users need to be able to select a color theme from either a search bar or a color picker.
 - Users need to be able to type search for an image and be displayed a selection of images to chose from.
-- Users will be presented a link to pixabay for results containing more than 10 images (maybe).
 
 - CODE GUIDELINES -
   all names to be listed in camelCase -->
@@ -41,7 +39,13 @@ functions for saving information will be in savesubjectData. functions for readi
 functions for form information sent in will be in the format of subjectSubmit.
 
 # Usage
+- Click the "instructions" button to display a model containing details on how to use the app.
+- To generate a color theme, start by typing the name of a color into the color search bar, or click the provided color block to select from a color picker. User input will generate themes based on selection.
+- To generate an image, type into the search bar the type of image you want and click "search". Several images pertaining to that search will display.
 
 # Credits
 
 - Tailwinds CSS is used for our styling and wiremapping
+- The following link was used to create modal functions for the "Creators" and "Instructions" buttons.
+https://replit.com/@ProgrammingBasi/TailwindCSS-Modal#index.html
+- 
