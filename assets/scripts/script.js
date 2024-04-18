@@ -47,7 +47,7 @@ function getVectorsByKeywords(keywords) {
             }
             console.log(hit);
         });
-        return hits;
+        setItem('hits', hits);
         /* hit OBJ: */
         /* 
          let hit = hits[0];
@@ -114,9 +114,10 @@ function getColorByHex(colorData) {
 
 function getSchemeByHex(colorData) {
     fetch(ps).then(result => result.json()).then(result => {
+        setItem('currentScheme', result.colors);
         debugger;
         // may need to set up async and set a variable instead of return
-        return result
+        // return result
     });
 }
 
@@ -145,7 +146,7 @@ function findColorDataByName(name) {
     // this needs to be expanded to have rbg formatted for passing to qs
 
     getColorByHex(colorData.hex.slice(1));
-
+    getSchemeByHex(colorData.hex.slice(1));
 
 }
 
