@@ -8,15 +8,58 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <header class="flex flex-row justify-between bg-slate-200 h-14">
+  <header class="flex flex-row justify-between bg-slate-200 h-20">
   <h1 class="flex items-center text-3xl ml-8">Jeans 👖</h1>
   <nav class="flex flex-row justify-evenly items-center w-1/3">
     <!--The id "helpBtn" identifies the nav Need Help? button (maybe the modal can be tied to this and display instructions?)-->
     <button id="helpBtn">Need Help?</button>
+
     <!--The id "creatorsBtn" identifies the nav creators button (drop down menu w/ our names?)-->
-    <button id="creatorsBtn">Creators</button>
-    <!--The id "checkBtn" identifies the nav Check Us Out button (drop down menu w/ our GitHub names or linkedIn etc.?)-->
-    <button id="checkBtn">Check Us Out</button>
+  <button id="creatorsBtn" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 py-1 px-4 rounded-full text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Creators<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+    </svg>
+    </button>
+    <!--Dropdown menu for "creatorsBtn" nav button-->
+    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Charles Gross</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dylan Thrasher</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Breeanna Nouskhajian</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Stephen Jastrow</a>
+          </li>
+        </ul>
+    </div>
+
+    <!--The id "stuffBtn" identifies the nav Our Stuff button (drop down menu w/ our GitHub names?)-->
+    <button id="stuffBtn" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 py-1 px-4 rounded-full text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Our Stuff<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+      </svg>
+      </button>
+      
+      <!-- Dropdown menu for "stuffBtn" nav button-->
+      <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Charles Gross</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dylan Thrasher</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Breeanna Nouskhajian</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Stephen Jastrow</a>
+            </li>
+          </ul>
+      </div>
   </nav>
   </header>
 
@@ -35,7 +78,7 @@
               <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
               <input class="py-1 px-3 rounded-full" type="search" id="colorSearch"/>
               <!--The id "colorSearchBtn" identifies the button the user will press to initiate the search for the typed color-->
-              <button id="colorSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Search</button>
+              <button id="colorSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded-full">Search</button>
               <label for="colorSelect">Select a Color:</label>
               <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
               <input class="rounded-sm " type="color" id="colorSelect" name="colorSelect" value="#ff0000">
@@ -59,7 +102,7 @@
           <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
           <input class="py-1 px-3 rounded-full" type="search" id="imageSearch" />
           <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
-          <button id="imageSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Search</button>
+          <button id="imageSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded-full">Search</button>
         </form>
         <br>
         <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
@@ -75,8 +118,8 @@
     </section>
   </main>
 <!--Cant add button to footer for some reason, the footer dissapears. Help pls.-->
-  <footer class="h-14">
-      <!-- <button id="saveFavBtn" class="flex items-center mr-8 bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Save your Favorites?</button> -->
+  <footer class="flex flex-row items-center justify-end h-20 bg-slate-200">
+      <button id="saveFavBtn" class="mr-8 bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Save your Favorites?</button>
     </footer>
   
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
