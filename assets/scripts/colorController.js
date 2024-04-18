@@ -95,13 +95,14 @@ function onColorSearch(ev) {
 // document ready 
 $(() => {
     let colorInput = $("#colorSearch")
+    let colorSelect = $("#colorSelect")
     
     //add click listener to imageSearchBtn
   
-    /*colorInput.on('click', onColorPickerClick);
-    colorInput.on('change', onColorPickerChange);
-    colorInput.on('input', onColorPickerInput);
-    */
+    colorSelect.on('click', onColorPickerClick);
+    colorSelect.on('change', onColorPickerChange);
+    colorSelect.on('input', onColorPickerInput);
+    
     colorInput.on("keydown", function (e) {
         if (e.keyCode == 13) {
             onColorSearch(e)
