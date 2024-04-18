@@ -48,11 +48,12 @@ function getVectorsByKeywords(keywords) {
             console.log(hit);
         });
         setItem('hits', hits);
-        for (let i = 0; i < 6; i++) {
-            let imageEl = $(`#imageResult${i}`); 
-            $(`#imageResult${i}`).attr('src', hits[i].vectorURL);
-        }
-
+        /* for (let i = 0; i < 6; i++) {
+             let imageEl = $(`#imageResult${i}`); 
+             $(`#imageResult${i}`).attr('src', hits[i].vectorURL);
+         }
+ */
+        populateImageElements(hits);
         debugger;
         /* hit OBJ: */
         /* 
@@ -87,6 +88,36 @@ function getVectorsByKeywords(keywords) {
     })
 }
 
+function populateImageElements(vectors) {
+    let featured = $(`#imageResult${0}`);
+    featured.attr('src', vectors[0].vectorURL);
+
+    let iamgeContainer = $("#imageContainer");
+    iamgeContainer.empty();
+    iamgeContainer.addClass(`flex flex-row flex-nowrap mx-4 my-4 overflow-auto`)
+    const classString = `mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
+    const imageString = `imageResults`;
+    const cardSting = `${imageString}Card`;
+
+    let vectorCards = [];
+    for (let i = 1; i < vectors.length; i++) {
+        let card = generateElement("div", { id: `${cardSting}${i}` })
+        let data = {
+            class: classString,
+            src: vectors[i].vectorURL,
+            id: `${imageString}${i}`,
+            alt: vectors[i].tags
+        }
+
+        card.append(generateElement('img', data));
+
+        vectorCards.push(card);
+        //card.parent().append(card);
+    }
+
+    iamgeContainer.append(vectorCards);
+}
+
 function onImageSearch(event) {
     event.preventDefault();
     debugger;
@@ -109,7 +140,7 @@ $(() => {
             onImageSearch(e);
         }
     });
-    
+
     $('#imageSearchBtn').on('click', onImageSearchClick);
- 
+
 });
