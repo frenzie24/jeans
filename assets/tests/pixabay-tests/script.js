@@ -859,7 +859,7 @@ function runTest(keywords) {
             keyword += "+" + key; // currently outputs +yellow+red
         })
 
-        keyword = keywords.slice(1);
+        keyword = keyword.slice(1);
     } catch (err) {
         keyword = keywords;
         console.log('error: keyword is not an array, passing single key val');
