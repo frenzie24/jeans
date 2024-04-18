@@ -1,23 +1,23 @@
 document
-  .getElementById("open-modal-btn")
+  .getElementById("openModalBtn")
   .addEventListener("click", function () {
     document.getElementById("modal").classList.remove("hidden");
   });
 
 document
-  .getElementById("close-modal-btn")
+  .getElementById("closeModalBtn")
   .addEventListener("click", function () {
     document.getElementById("modal").classList.add("hidden");
   });
 
 document
-  .getElementById("creators-open-modal-btn")
+  .getElementById("creatorsOpenModalBtn")
   .addEventListener("click", function () {
     document.getElementById("creatorsModal").classList.remove("hidden");
   });
 
 document
-  .getElementById("creators-close-modal-btn")
+  .getElementById("creatorsCloseModalBtn")
   .addEventListener("click", function () {
     document.getElementById("creatorsModal").classList.add("hidden");
   });
