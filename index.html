@@ -19,8 +19,9 @@
       <!--LEFT SECTION/ COLOR SECTION OF PROJECT-->
 
       <!--The id "colorSection" identifies the left area of the viewport that contains all color elements-->
-      <section id="colorSection" class="w-5/12 bg-slate-200 my-8">
-          <h2>Swatch Generator</h2>
+      <section id="colorSection" class="flex flex-col w-5/12 bg-slate-200 my-8">
+          <h2 class="flex justify-around text-3xl">Color Swatch Generator</h2>
+          <br>
           <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
             <form id="colorSearchEls">
               <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
@@ -33,15 +34,20 @@
               <!--The id "colorSelectBtn" identifies the button the user will press to initiate the search for the selected/ picked color-->
               <button id="colorSelectBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Search</button>
             </form>
+            <br>
             <!--The id "swatchContainer" identifies the container for the swatches that will be displayed inside"-->
-            <div id="swatchContainer"></div>
+            <div id="swatchContainer">Swatch searches will go in here</div>
+            <br>
+            <!--The id "favoriteSwatches" identifies the container that the users favorite swatches will be displayed inside"-->
+            <div id="favoriteSwatches">Favorite swatches will go in here</div>
       </section>
 
       <!--RIGHT SECTION/ IMAGE SECTION OF PROJECT-->
 
     <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
-    <section id="imageSection" class="w-5/12 bg-slate-200 my-8">
-        <h2>Vector Image Generator</h2>
+    <section id="imageSection" class="flex flex-col w-5/12 bg-slate-200 my-8">
+        <h2 class="flex justify-around text-3xl">Vector Image Generator</h2>
+        <br>
         <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
         <form id="imageSearchEls">
           <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
@@ -49,8 +55,12 @@
           <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
           <button id="imageSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Search</button>
         </form>
+        <br>
         <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
-        <div id="imageContainer"></div>
+        <div id="imageContainer">Image searches will go in here</div>
+        <br>
+        <!--The id "favoriteImages" identifies the container that the users favorite images will be displayed inside"-->
+        <div id="favoriteImages">Favorite images will go in here</div>
     </section>
   </main>
 
