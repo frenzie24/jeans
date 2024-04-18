@@ -18,6 +18,119 @@
       <!--The id "helpBtn" identifies the nav Need Help? button (maybe the modal can be tied to this and display instructions?)-->
       <button id="helpBtn">Need Help?</button>
 
+<button
+          id="open-modal-btn"
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Need Help?
+        </button>
+        <!-- Modal Wrapper -->
+        <div
+          id="modal"
+          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 hidden fixed z-10 inset-0"
+        >
+          <div
+            class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity"
+          >
+            <!-- Modal Box -->
+            <div
+              class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3"
+            >
+              <h3
+                class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase"
+                
+              >
+                Page Instructions
+              </h3>
+              <p class="text-center mt-14 text-xl text-gray-500">
+                For generating color swatches - Either type a color in the
+                search bar or select a color from the "Select a Color" preview
+                window.
+                <br />
+                For generating a vector image - Type in your search and click
+                the "Search Button".
+              </p>
+              <button
+                id="close-modal-btn"
+                type="button"
+                class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button
+          id="creators-open-modal-btn"
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Creators
+        </button>
+        <!-- Modal Wrapper -->
+        <div id="creatorsModal" class="hidden fixed z-10 inset-0">
+          <div
+            class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity"
+          >
+            <!-- Modal Box -->
+            <div
+              class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3"
+            >
+              <h3
+                class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase"
+                id="modal-title"
+              >
+                Creators
+              </h3>
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownDefaultButton"
+              >
+                <li>
+                  <a
+                    href="https://github.com/sjastrow92"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Stephen Jastrow</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/Dylan-Thrasher"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Dylan Thrasher</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/frenzie24"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Charles Gross</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/BreeNous"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Breeanna Nouskhajian</a
+                  >
+                </li>
+              </ul>
+
+              <button
+                id="creators-close-modal-btn"
+                type="button"
+                class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
       <!--The id "creatorsBtn" identifies the nav creators button (drop down menu w/ our names?)-->
       <button id="creatorsBtn" data-dropdown-toggle="dropdown"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 py-1 px-4 rounded-full text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -203,6 +316,7 @@
   <script src="./assets/scripts/colors.js"></script>
   <script src="./assets/scripts/imageController.js"></script>
   <script src="./assets/scripts/colorController.js"></script>
+  <script src="./assets/scripts/modal.js"></script>
 </body>
 
 </html>
