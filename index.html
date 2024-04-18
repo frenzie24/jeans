@@ -39,8 +39,6 @@
               <label for="colorSelect">Select a Color:</label>
               <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
               <input class="rounded-sm " type="color" id="colorSelect" name="colorSelect" value="#ff0000">
-              <!--The id "colorSelectBtn" identifies the button the user will press to initiate the search for the selected/ picked color-->
-              <button id="colorSelectBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Search</button>
             </form>
             <br>
             <!--The id "swatchContainer" identifies the container for the swatches that will be displayed inside"-->
@@ -65,7 +63,12 @@
         </form>
         <br>
         <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
-        <div id="imageContainer">Image searches will go in here</div>
+        <div id="imageContainer">Image searches will go in here
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+            </div>
+        </div>
         <br>
         <!--The id "favoriteImages" identifies the container that the users favorite images will be displayed inside"-->
         <div id="favoriteImages">Favorite images will go in here</div>
