@@ -50,7 +50,7 @@ function getVectorsByKeywords(keywords) {
         setItem('hits', hits);
         for (let i = 0; i < 6; i++) {
             let imageEl = $(`#imageResult${i}`); 
-            $(`#imageResult${i}`).attr('src', hits.vectorURL);
+            $(`#imageResult${i}`).attr('src', hits[i].vectorURL);
         }
 
         debugger;
