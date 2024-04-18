@@ -18,114 +18,75 @@
       <!--The id "helpBtn" identifies the nav Need Help? button (maybe the modal can be tied to this and display instructions?)-->
       <button id="helpBtn">Need Help?</button>
 
-<button
-          id="open-modal-btn"
-          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Need Help?
-        </button>
-        <!-- Modal Wrapper -->
-        <div
-          id="modal"
-          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 hidden fixed z-10 inset-0"
-        >
-          <div
-            class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity"
-          >
-            <!-- Modal Box -->
-            <div
-              class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3"
-            >
-              <h3
-                class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase"
-                
-              >
-                Page Instructions
-              </h3>
-              <p class="text-center mt-14 text-xl text-gray-500">
-                For generating color swatches - Either type a color in the
-                search bar or select a color from the "Select a Color" preview
-                window.
-                <br />
-                For generating a vector image - Type in your search and click
-                the "Search Button".
-              </p>
-              <button
-                id="close-modal-btn"
-                type="button"
-                class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider"
-              >
-                Close
-              </button>
-            </div>
+      <button id="open-modal-btn" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        Need Help?
+      </button>
+      <!-- Modal Wrapper -->
+      <div id="modal"
+        class="hidden fixed z-10 inset-0">
+        <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity">
+          <!-- Modal Box -->
+          <div class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3">
+            <h3 class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase">
+              Page Instructions
+            </h3>
+            <p class="text-center mt-14 text-xl text-gray-500">
+              For generating color swatches - Either type a color in the
+              search bar or select a color from the "Select a Color" preview
+              window.
+              <br />
+              For generating a vector image - Type in your search and click
+              the "Search Button".
+            </p>
+            <button id="close-modal-btn" type="button"
+              class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider">
+              Close
+            </button>
           </div>
         </div>
+      </div>
 
-        <button
-          id="creators-open-modal-btn"
-          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Creators
-        </button>
-        <!-- Modal Wrapper -->
-        <div id="creatorsModal" class="hidden fixed z-10 inset-0">
-          <div
-            class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity"
-          >
-            <!-- Modal Box -->
-            <div
-              class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3"
-            >
-              <h3
-                class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase"
-                id="modal-title"
-              >
-                Creators
-              </h3>
-              <ul
-                class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                aria-labelledby="dropdownDefaultButton"
-              >
-                <li>
-                  <a
-                    href="https://github.com/sjastrow92"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Stephen Jastrow</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/Dylan-Thrasher"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Dylan Thrasher</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/frenzie24"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Charles Gross</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/BreeNous"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Breeanna Nouskhajian</a
-                  >
-                </li>
-              </ul>
+      <button id="creators-open-modal-btn" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        Creators
+      </button>
+      <!-- Modal Wrapper -->
+      <div id="creatorsModal" class="hidden fixed z-10 inset-0">
+        <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity">
+          <!-- Modal Box -->
+          <div class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3">
+            <h3 class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase" id="modal-title">
+              Creators
+            </h3>
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+              <li>
+                <a href="https://github.com/sjastrow92"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Stephen
+                  Jastrow</a>
+              </li>
+              <li>
+                <a href="https://github.com/Dylan-Thrasher"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dylan
+                  Thrasher</a>
+              </li>
+              <li>
+                <a href="https://github.com/frenzie24"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Charles
+                  Gross</a>
+              </li>
+              <li>
+                <a href="https://github.com/BreeNous"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Breeanna
+                  Nouskhajian</a>
+              </li>
+            </ul>
 
-              <button
-                id="creators-close-modal-btn"
-                type="button"
-                class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider"
-              >
-                Close
-              </button>
-            </div>
+            <button id="creators-close-modal-btn" type="button"
+              class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider">
+              Close
+            </button>
           </div>
         </div>
+      </div>
 
 
 
@@ -243,7 +204,7 @@
     <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
     <section id="imageSection" class="flex flex-col h-full w-5/12 bg-slate-200 rounded-3xl">
       <h2 class="flex justify-around text-3xl my-8">Vector Image Generator</h2>
-      
+
       <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
       <form id="imageSearchEls" class="flex flex-row flex-wrap justify-center frow mx-3">
         <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
@@ -253,54 +214,60 @@
           class="bg-blue-500 flex hover:bg-blue-700 text-white py-1 px-4 ml-3 rounded-full">Search</button>
       </form>
       <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
-        <div id="imageContainer" class="grid grid-cols-5 gap-4 mx-4 my-4">
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-            </div>
+      <div id="imageContainer" class="grid grid-cols-5 gap-4 mx-4 my-4">
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
         </div>
-        <div class="grid gap-4">
-          <div class="mx-4 mb-4">
-              <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
-          </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
         </div>
-        
-        <!--The id "favoriteImages" identifies the container that the users favorite images will be displayed inside"-->
-          <div id="favoriteImages" class="grid grid-cols-5 grid-rows-* gap-4 mx-4 mb-4">
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-            <div>
-              <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-          
-          </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
         </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
+        </div>
+      </div>
+      <div class="grid gap-4">
+        <div class="mx-4 mb-4">
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
+        </div>
+      </div>
+
+      <!--The id "favoriteImages" identifies the container that the users favorite images will be displayed inside"-->
+      <div id="favoriteImages" class="grid grid-cols-5 grid-rows-* gap-4 mx-4 mb-4">
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-lg"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        </div>
+
+      </div>
+      </div>
     </section>
 
   </main>
