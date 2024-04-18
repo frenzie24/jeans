@@ -11,7 +11,7 @@
 
 
 
-<body class="h-screen flex flex-row flex-wrap bg-pink-400">
+<body class="h-screen flex flex-row flex-wrap bg-slate-200">
   <header class="flex flex-row justify-between bg-slate-200 h-20 w-full">
     <h1 class="flex items-center text-3xl ml-8">Jeans 👖</h1>
     <nav class="flex flex-row justify-evenly items-center w-1/3">
@@ -82,12 +82,12 @@
       </div>
     </nav>
   </header>
-  <main class="flex flex-col flex-wrap justify-evenly items-start bg-slate-300 w-full">
+  <main class="flex flex-row flex-wrap justify-evenly items-start bg-slate-300 w-full  my-8">
 
     <!--LEFT SECTION/ COLOR SECTION OF PROJECTagewoinasdf-->
 
     <!--The id "colorSection" identifies the left area of the viewport that contains all color elements-->
-    <section id="colorSection" class="flex flex-col h-full w-5/12 bg-slate-200 my-8">
+    <section id="colorSection" class="flex flex-col h-full w-5/12 bg-slate-200">
       <h2 class="flex justify-around text-3xl">Color Swatch Generator</h2>
       <br>
       <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
@@ -112,7 +112,7 @@
     <!--RIGHT SECTION/ IMAGE SECTION OF PROJECT-->
 
     <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
-    <section id="imageSection" class="flex flex-col h-full w-5/12 bg-slate-200 my-8">
+    <section id="imageSection" class="flex flex-col h-full w-5/12 bg-slate-200">
       <h2 class="flex justify-around text-3xl">Vector Image Generator</h2>
       <br>
       <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
@@ -131,16 +131,56 @@
             <img class="h-auto max-w-full rounded-lg"
               src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
           </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+          </div>
+
+          <div>
+            <img class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg"
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+          </div>
+
+      
+
         </div>
         <br>
         <!--The id "favoriteImages" identifies the container that the users favorite images will be displayed inside"-->
-        <div id="favoriteImages">Favorite images will go in here</div>
+        <div id="favoriteImages">Favorite images will go in here
+          <div class="grid grid-cols-5 grid-rows-* gap-4">
+            <div>
+              <img class="h-auto max-w-full rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+            </div>
+            <div>
+              <img class="h-auto max-w-full rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+            </div>
+            <div>
+              <img class="h-auto max-w-full rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+            </div>
+            <div>
+              <img class="h-auto max-w-full rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+            </div>
+            <div>
+              <img class="h-auto max-w-full rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+            </div>
+          
+          </div>
+        </div>
     </section>
 
   </main>
 
   <!--Cant add button to footer for some reason, the footer dissapears. Help pls.-->
-  <footer class="flex flex-row items-center justify-end w-full h-20 bg-slate-200">
+  <footer class="flex flex-row self-end items-center justify-end w-full h-20 bg-slate-200">
     <button id="saveFavBtn" class="mr-8 bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Save your
       Favorites?</button>
   </footer>
