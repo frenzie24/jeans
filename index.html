@@ -116,17 +116,17 @@
       <h2 class="flex justify-around text-3xl">Vector Image Generator</h2>
       <br>
       <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
-      <form id="imageSearchEls">
+      <form id="imageSearchEls" class="flex flex-row flex-wrap justify-center w-full mx-3">
         <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
-        <input class="py-1 px-3 rounded-full" type="search" id="imageSearch" />
+        <input class="py-1 px-3 rounded-full grow" type="search" id="imageSearch" />
         <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
         <button id="imageSearchBtn"
-          class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded-full">Search</button>
+          class="bg-blue-500 flex hover:bg-blue-700 text-white py-1 px-4 ml-3 rounded-full">Search</button>
       </form>
       <br>
       <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
       <div id="imageContainer">Image searches will go in here
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="grid grid-cols-3 md:grid-cols-3 gap-4">
           <div>
             <img class="h-auto max-w-full rounded-lg"
               src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
