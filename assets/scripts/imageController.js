@@ -160,6 +160,7 @@ function onImageSearch(event) {
     event.preventDefault();
     debugger;
     let keywords = event.target.value;
+    localStorage.setItem('keywords', keywords);
     let vectors = getVectorsByKeywords(keywords);
     console.log(vectors);
     debugger;
@@ -178,8 +179,9 @@ $(() => {
             onImageSearch(e);
         }
     });
-
-    getVectorsByKeywords('cats');
+    let last = localStorage.getItem('keywords');
+    
+    getVectorsByKeywords(last ? last : 'cats');
     $('#imageSearchBtn').on('click', onImageSearchClick);
 
 

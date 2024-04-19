@@ -73,7 +73,8 @@ function generateElement(tag, attr, data) {
     // so it breaks down to $("<section>");, data);
     let element = $(`<${tag}>`, attr);
     //$().data('key', val: string, obj, etc)
-    element.data('dataobj', data);
+    element.data('dataobj', data);  
+    element.attr('data-dataobj',data);
     return element;
 }
 // creates an element with tag and sets its value to val, no attribute assignments
