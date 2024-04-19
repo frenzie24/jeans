@@ -16,7 +16,7 @@ function getColorByHex(colorData) {
     let qs = `https://www.thecolorapi.com/id?hex=${colorData}&format=json`
     fetch(qs).then(result => result.json()).then(result => {
         setItem('currentColor', result);
-        
+
     });
 
 }
@@ -32,11 +32,19 @@ function getColorByHex(colorData) {
 */
 
 function onSwatchClick(ev) {
+    //ev.target.parentElement.id
     ev.preventDefault();
-    console.log(ev.target.id);
-    let swatch = ("#" + ev.target.id);
+    // console.log(ev.target.id);
+    //  let swatch = ("#" + ev.target.id);
+    let color = ev.target.classList[2];
+    color = color.slice(4);
+    color = color.replaceAll("]", "");
+    $("#colorSelect").val(color);
+
+    $("#colorSearch").val(color);
+    debugger;
     //get swatch [0] hex pass to get SchemeByHex with for loop for the schemes
-    
+
 }
 
 function createContainer(containerObj, contentObj, footerObj) {
@@ -47,16 +55,16 @@ function createContainer(containerObj, contentObj, footerObj) {
         containerObj.data);
 
     let _content = generateElement("div", contentObj.attr, contentObj.data);//.css({ backgroundColor: `#${hex}` }).on('click', onSwatchClick);
-
+    _content.on('click', onSwatchClick);
 
     _container.append(_content);
 
     if (footerObj) {
-        
+
         let _footer = generateElement("footer",
             footerObj.attr,
             footerObj.data);
-            _footer.text(footerObj.data);
+        _footer.text(footerObj.data);
         _container.append(_footer)
     }
     return _container;
@@ -127,18 +135,18 @@ function getSchemeByHex(hex, type) {
         const length = result.colors.length;
         //  length = length > 6 ? 6 : length;
         rowBabies = createSwathChildrenObjs(result.mode, result.colors);
-     
+
 
         if (rowBabies.length > 0) {
             row = createRowContainer(rowAttr, result, rowBabies);
             // row = //createRowContainer({ attr: rowAttr, result }, rowBabies)
         }
-        
+
         // row.append(rowBabies);
 
         $("#swatchContainer").append(row);
         // setItem('currentScheme', result);
-        
+
         // may need to set up async and set a variable instead of return
         // return result
     });
@@ -192,9 +200,9 @@ function findColorDataByName(name) {
     let colorData = colors.find((element) => element.name == name);
     // this needs to be expanded to have rbg formatted for passing to qs
     return colorData;
-   //getColorByHex(colorData.hex.slice(1));
+    //getColorByHex(colorData.hex.slice(1));
     //gets all the schemes yo
-    
+
 
 }
 
@@ -206,13 +214,14 @@ function onColorPickerClick(ev) {
 // when color picker closes and value changes, parse value to workable string and run a test
 function onColorPickerChange(ev) {
     let colorHash = ev.target.value;
-   // colorHash = colorHash.slice(1);
-    renderSchemes( colorHash.slice(1));
-  //  getColorByHex(colorHash);
+    // colorHash = colorHash.slice(1);
+   // renderSchemes(colorHash.slice(1));
+    //  getColorByHex(colorHash);
 }
 
 function onColorPickerInput(ev) {
     let colorHash = ev.target.value;
+    $('#colorSearch').val(colorHash);
     colorHash = colorHash.slice(1);
     // getColorByHex(colorHash);
     // this is when a color value is input
@@ -221,16 +230,18 @@ function onColorPickerInput(ev) {
 function onColorSearch(ev) {
     ev.preventDefault();
     let colorInput = $("#colorSearch");
-
-    renderSchemes(findColorDataByName(colorInput.val()).hex.slice(1));
+    if (colorInput.val().slice(1) == '#') {
+        renderSchemes(findColorDataByName(colorInput.val()).hex.slice(1));
+    } else  renderSchemes(colorInput.val().slice(1))
+   
 }
 
 function onColorSearchBtnClick(ev) {
     ev.preventDefault();
-   
-    let colorInput = $("#colorSearch");
-
-    renderSchemes(findColorDataByName(colorInput.val()).hex.slice(1));
+    let colorInput = $("#colorSearch"); 
+    if (colorInput.val().slice(1) == '#') {
+        renderSchemes(findColorDataByName(colorInput.val()).hex.slice(1));
+    } else  renderSchemes(colorInput.val().slice(1))
 }
 
 // document ready 
@@ -257,8 +268,8 @@ $(() => {
         }
     });
 
-    let lastScheme = localStorage.getItem('scheme') ;
+    let lastScheme = localStorage.getItem('scheme');
     debugger;
-    renderSchemes(lastScheme ? lastScheme : findColorDataByName('red').hex.slice(1) );
+    renderSchemes(lastScheme ? lastScheme : findColorDataByName('red').hex.slice(1));
 
 });
