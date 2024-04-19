@@ -11,6 +11,8 @@ let schemes = [
   "quad"
 ]
 
+// colors provided from https://gist.github.com/jennyknuth/e2d9ee930303d5a5fe8862c6e31819c5
+
 let colors = [
   {
     "name": "INDIANRED",
