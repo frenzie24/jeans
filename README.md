@@ -1,4 +1,4 @@
-# genes
+# Jeans
 
 styling color and image search.
 
@@ -64,7 +64,7 @@ JSON colors array used for our text search results was provided by
 https://gist.github.com/jennyknuth/e2d9ee930303d5a5fe8862c6e31819c5
 
 - Link to our repository
-https://github.com/frenzie24/genes
+https://github.com/frenzie24/jeans
 
 - deployment link
-https://frenzie24.github.io/genes
+https://frenzie24.github.io/jeans
