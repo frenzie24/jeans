@@ -171,11 +171,11 @@ const stringToColour = (str) => {
     getColorByHex(colour);
 }
 
-function getScheme(colorData) {
+function renderSchemes(colorData) {
     $('#swatchContainer').empty();
     schemes.forEach(type => {
         console.log(colorData)
-        getSchemeByHex(colorData.hex.slice(1), type);
+        getSchemeByHex(colorData, type);
     })
 }
 
@@ -203,8 +203,9 @@ function onColorPickerClick(ev) {
 // when color picker closes and value changes, parse value to workable string and run a test
 function onColorPickerChange(ev) {
     let colorHash = ev.target.value;
-    colorHash = colorHash.slice(1);
-    getColorByHex(colorHash);
+   // colorHash = colorHash.slice(1);
+    renderSchemes( colorHash.slice(1));
+  //  getColorByHex(colorHash);
 }
 
 function onColorPickerInput(ev) {
