@@ -52,9 +52,11 @@ function createContainer(containerObj, contentObj, footerObj) {
     _container.append(_content);
 
     if (footerObj) {
+        debugger;
         let _footer = generateElement("footer",
             footerObj.attr,
             footerObj.data);
+            _footer.text(footerObj.data);
         _container.append(_footer)
     }
     return _container;
@@ -84,15 +86,15 @@ function createSwathChildrenObjs(mode, colors) {
         const swatchContainerAttr = {
             id: `${mode}Color${i}`,
 
-            class: `w-1/${length} h-16 flex flex-row flex-wrap items-start`,
+            class: `w-1/${length} h-20 flex flex-row flex-wrap items-start`,
         }
         const swatchAttr = {
-            class: `w-full h-10 bg-[${colors[i].hex.value}]`,
+            class: `w-full h-12 bg-[${colors[i].hex.value}]`,
             // style: { backgroundColor: `${colors[i].hex.value}` }
         }
         let footer = {
-            attr: { class: "w-full h-4 bg-white text-black text-base" },
-            data: `#${colors[i].hex.value}`
+            attr: { class: "w-full h-8 bg-white text-black text-base text-center" },
+            data: `${colors[i].hex.value}`
         }
 
         rowObjs.push({
@@ -125,33 +127,7 @@ function getSchemeByHex(hex, type) {
         const length = result.colors.length;
         //  length = length > 6 ? 6 : length;
         rowBabies = createSwathChildrenObjs(result.mode, result.colors);
-        /* for (let i = 0; i < length; i++) {
-             const swatchContainerAttr = {
-                 id: `${result.mode}Color${i}`,
- 
-                 class: `w-1/${length} h-16 flex flex-row flex-wrap items-start`,
-             }
-             const swatchAttr = {
-                 class: 'w-full'
-             }
-             let footer={ 
-                 attr: { class: "w-full h-4 bg-white text-black text-base" }, 
-                 data: `#${hex}`
-             }
- 
-             rowBabies.push({ attr: swatchAttr, 
-                 data: result.colors[i], 
-                 footer:footer
-             });
-            */
-        // let swatchContainer = generateElement("div", swatchContainerAttr);
-
-        // let swatch = generateElement("div", swatchAttr, result.colors[i]).css({ backgroundColor: `#${hex}` }).on('click', onSwatchClick);
-        //  let swatchFooter = generateElement("div", { class: "w-full h-4 bg-white text-black text-base" }).text(`#${hex}`);
-        //  swatchContainer.append([swatch.swatchFooter]);
-
-        //  rowBabies.push(swatchContainer);
-
+     
 
         if (rowBabies.length > 0) {
             row = createRowContainer(rowAttr, result, rowBabies);
@@ -195,6 +171,14 @@ const stringToColour = (str) => {
     getColorByHex(colour);
 }
 
+function getScheme(colorData) {
+    $('#swatchContainer').empty();
+    schemes.forEach(type => {
+        console.log(colorData)
+        getSchemeByHex(colorData.hex.slice(1), type);
+    })
+}
+
 
 // returns a obj with color data (hex/rgb/name/families) based on passed string
 function findColorDataByName(name) {
@@ -207,11 +191,7 @@ function findColorDataByName(name) {
 
     getColorByHex(colorData.hex.slice(1));
     //gets all the schemes yo
-    $('#swatchContainer').empty();
-    schemes.forEach(type => {
-        console.log(colorData)
-        getSchemeByHex(colorData.hex.slice(1), type);
-    })
+    
 
 }
 
