@@ -108,15 +108,15 @@
 
         <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
         <form id="colorSearchEls" class="flex flex-row flex-wrap justify-center items-center frow mx-3">
+          <label class="mr-3" for="colorSelect">Select a Color:</label>
+          <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
+          <input class="rounded-sm border-none bg-none h-8 w-8 rounded-3xl mr-3" type="color" id="colorSelect" name="colorSelect" value="#ff0000">
+          <p class="mr-3">or Search:</p>
           <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
           <input class="py-1 px-3 rounded-full grow" type="search" id="colorSearch" />
           <!--The id "colorSearchBtn" identifies the button the user will press to initiate the search for the typed color-->
-          <button id="colorSearchBtn"
-            class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 mx-3 rounded-full">Search</button>
-          <label class="mr-3" for="colorSelect">Select a Color:</label>
-          <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
-          <input class="rounded-sm border-none bg-none h-8 w-8 rounded-3xl" type="color" id="colorSelect"
-            name="colorSelect" value="#ff0000">
+          <button id="colorSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 mx-3 rounded-full">Search</button>
+        
         </form>
       </div>
       <!--The id "swatchContainer" identifies the container for the swatches that will be displayed inside"-->
@@ -144,13 +144,54 @@
           </div>
           <div id="analogic-complement" class="w-1/5"></div>
           <div id="triad"></div>
-          <div id="quad">5</div>
+          <div id="quad"></div>
         </div>
       </div>
       <!--The id "favoriteSwatches" identifies the container that the users favorite swatches will be displayed inside"-->
-      <div id="favoriteSwatches" class="flex mx-4 h-20"> Color Search History:
+      <div id="favoriteSwatches" class="flex mx-4"> Color Search History:</div>
+        <div class="flex flex-row flex-nowrap mx-4 my-4 h-20 overflow-auto">
 
-      </div>
+          <div>
+            <div id="colorSearch1" class="w-20">Search1</div>
+          </div>
+
+          <div>
+            <div id="colorSearch2" class="w-20">Search2</div>
+          </div>
+
+          <div>
+            <div id="colorSearch3" class="w-20">Search3</div>
+          </div>
+
+          <div>
+            <div id="colorSearch4" class="w-20">Search4</div>
+          </div>
+
+          <div>
+            <div id="colorSearch5" class="w-20">Search5</div>
+          </div>
+
+          <div>
+            <div id="colorSearch6" class="w-20">Search6</div>
+          </div>
+
+          <div>
+            <div id="colorSearch7" class="w-20">Search7</div>
+          </div>
+
+          <div>
+            <div id="colorSearch8" class="w-20">Search8</div>
+          </div>
+
+          <div>
+            <div id="colorSearch9" class="w-20">Search9</div>
+          </div>
+
+          <div>
+            <div id="colorSearch10" class="w-20">Search10</div>
+          </div>
+
+        </div>
     </section>
 
     <!--RIGHT SECTION/ IMAGE SECTION OF PROJECT-->
