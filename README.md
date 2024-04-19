@@ -46,3 +46,6 @@ https://replit.com/@ProgrammingBasi/TailwindCSS-Modal#index.html
 
 - Link to our repository
 https://github.com/frenzie24/genes
+
+- deployment link
+https://frenzie24.github.io/genes
