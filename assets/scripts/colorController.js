@@ -34,7 +34,12 @@ function getColorByHex(colorData) {
 function getSchemeByHex(hex, type) {
     let ps = `https://www.thecolorapi.com/scheme?hex=0047AB${hex}&format=json&mode=${type}&count=6`;
     fetch(ps).then(result => result.json()).then(result => {
-        setItem('currentScheme', result);
+        let rowData = {
+            id: type,
+            class: "flex flex-row",
+        }
+        let row = generateElement('div', rowData);
+       // setItem('currentScheme', result);
         debugger;
         // may need to set up async and set a variable instead of return
         // return result
@@ -66,7 +71,11 @@ function findColorDataByName(name) {
     // this needs to be expanded to have rbg formatted for passing to qs
 
     getColorByHex(colorData.hex.slice(1));
-    getSchemeByHex(colorData.hex.slice(1), 'analogic');
+    //gets all the schemes yo
+    schemes.forEach(type => {
+
+        getSchemeByHex(colorData.hex.slice(1), type);
+    })
 
 }
 
@@ -85,22 +94,22 @@ function onColorPickerChange(ev) {
 function onColorPickerInput(ev) {
     let colorHash = ev.target.value;
     colorHash = colorHash.slice(1);
-   // getColorByHex(colorHash);
+    // getColorByHex(colorHash);
     // this is when a color value is input
 }
 
 function onColorSearch(ev) {
     ev.preventDefault();
     let colorInput = $("#colorSearch");
-    
+
     findColorDataByName(colorInput.val());
 }
 
 function onColorSearchBtnClick(ev) {
     ev.preventDefault();
-    let btn = $('#'+ev.target.id);
+    let btn = $('#' + ev.target.id);
     let colorString = $('#colorSearch').val();
-    if(colorString == '') {
+    if (colorString == '') {
         // if the input is empty cancel it 
         return;
     }
@@ -113,7 +122,7 @@ $(() => {
     let colorInput = $("#colorSearch")
     // color picker jquery obj
     let colorSelect = $("#colorSelect")
-    
+
     //add click listener to imageSearchBtn
     let colorSearchBtn = $('#colorSearchBtn');
 
@@ -123,7 +132,7 @@ $(() => {
     colorSelect.on('click', onColorPickerClick);
     colorSelect.on('change', onColorPickerChange);
     colorSelect.on('input', onColorPickerInput);
-    
+
     colorInput.on("keydown", function (e) {
         if (e.keyCode == 13) {
             onColorSearch(e)
