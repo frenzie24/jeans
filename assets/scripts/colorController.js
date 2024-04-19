@@ -31,19 +31,154 @@ function getColorByHex(colorData) {
 &count=6'
 */
 
-function getSchemeByHex(hex, type) {
-    let ps = `https://www.thecolorapi.com/scheme?hex=0047AB${hex}&format=json&mode=${type}&count=6`;
-    fetch(ps).then(result => result.json()).then(result => {
-        let rowData = {
-            id: type,
-            class: "flex flex-row",
+function onSwatchClick(ev) {
+    ev.preventDefault();
+    console.log(ev.target.id);
+    let swatch = ("#" + ev.target.id);
+    //get swatch [0] hex pass to get SchemeByHex with for loop for the schemes
+    debugger;
+}
+
+function createContainer(containerObj, contentObj, footerObj) {
+
+    let ch = footerObj ? 'h-5/6' : "h-full";
+    let _container = generateElement("div",
+        containerObj.attr,
+        containerObj.data);
+
+    let _content = generateElement("div", contentObj.attr, contentObj.data);//.css({ backgroundColor: `#${hex}` }).on('click', onSwatchClick);
+
+
+    _container.append(_content);
+
+    if (footerObj) {
+        let _footer = generateElement("footer",
+            footerObj.attr,
+            footerObj.data);
+        _container.append(_footer)
+    }
+    return _container;
+
+}
+
+function createRowContainer(attr, data, children) {
+
+    let row = generateElement('div', attr, data);
+    let rowEls = [];
+    const length = children.length;
+    for (let i = 0; i < length; i++) {
+        let container = createContainer(children[i].containerObj, children[i].contentObj, children[i].footerObj)
+
+        rowEls.push(container);
+    }
+
+    row.append(rowEls);
+    return row;
+}
+
+function createSwathChildrenObjs(mode, colors) {
+    let rowObjs = [];
+    const length = colors.length;
+    //  length = length > 6 ? 6 : length;
+    for (let i = 0; i < length; i++) {
+        const swatchContainerAttr = {
+            id: `${mode}Color${i}`,
+
+            class: `w-1/${length} h-16 flex flex-row flex-wrap items-start`,
         }
-        let row = generateElement('div', rowData);
-       // setItem('currentScheme', result);
+        const swatchAttr = {
+            class: `w-full h-10 bg-[${colors[i].hex.value}]`,
+            // style: { backgroundColor: `${colors[i].hex.value}` }
+        }
+        let footer = {
+            attr: { class: "w-full h-4 bg-white text-black text-base" },
+            data: `#${colors[i].hex.value}`
+        }
+
+        rowObjs.push({
+            containerObj: {
+                attr: swatchContainerAttr,
+                data: ""
+            },
+            contentObj: {
+                attr: swatchAttr,
+                data: colors[i]
+            },
+            footerObj: footer
+        }
+        );
+    }
+    return rowObjs;
+
+    // let swatc
+}
+
+function getSchemeByHex(hex, type) {
+    let ps = `https://www.thecolorapi.com/scheme?hex=${hex}&format=json&mode=${type}`;
+    fetch(ps).then(result => result.json()).then(result => {
+        let rowAttr = {
+            id: result.mode,
+            class: "flex flex-row w-full",
+        }
+        // let row = generateElement('div', rowAttr, result);
+        let rowBabies = [];
+        const length = result.colors.length;
+        //  length = length > 6 ? 6 : length;
+        rowBabies = createSwathChildrenObjs(result.mode, result.colors);
+        /* for (let i = 0; i < length; i++) {
+             const swatchContainerAttr = {
+                 id: `${result.mode}Color${i}`,
+ 
+                 class: `w-1/${length} h-16 flex flex-row flex-wrap items-start`,
+             }
+             const swatchAttr = {
+                 class: 'w-full'
+             }
+             let footer={ 
+                 attr: { class: "w-full h-4 bg-white text-black text-base" }, 
+                 data: `#${hex}`
+             }
+ 
+             rowBabies.push({ attr: swatchAttr, 
+                 data: result.colors[i], 
+                 footer:footer
+             });
+            */
+        // let swatchContainer = generateElement("div", swatchContainerAttr);
+
+        // let swatch = generateElement("div", swatchAttr, result.colors[i]).css({ backgroundColor: `#${hex}` }).on('click', onSwatchClick);
+        //  let swatchFooter = generateElement("div", { class: "w-full h-4 bg-white text-black text-base" }).text(`#${hex}`);
+        //  swatchContainer.append([swatch.swatchFooter]);
+
+        //  rowBabies.push(swatchContainer);
+
+
+        if (rowBabies.length > 0) {
+            row = createRowContainer(rowAttr, result, rowBabies);
+            // row = //createRowContainer({ attr: rowAttr, result }, rowBabies)
+        }
+        debugger;
+        // row.append(rowBabies);
+
+        $("#swatchContainer").append(row);
+        // setItem('currentScheme', result);
         debugger;
         // may need to set up async and set a variable instead of return
         // return result
     });
+}
+
+function testGenerics() {
+
+    $('#swatchContainer').empty();
+    let scheme = getItem('currentScheme');
+    let attr = {
+        id: scheme.mode,
+        class: "flex flex-row w-full",
+    }
+    let rowChildnre = createSwathChildrenObjs(scheme.mode, scheme.colors);
+    let row = createRowContainer(attr, scheme, rowChildnre);
+    $("#swatchContainer").append(row);
 }
 
 // takes string entered in search bar and makes it into a format that can be compared to saved list of names
@@ -72,8 +207,9 @@ function findColorDataByName(name) {
 
     getColorByHex(colorData.hex.slice(1));
     //gets all the schemes yo
+    $('#swatchContainer').empty();
     schemes.forEach(type => {
-
+        console.log(colorData)
         getSchemeByHex(colorData.hex.slice(1), type);
     })
 
