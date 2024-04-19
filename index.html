@@ -14,10 +14,10 @@
 
 
 
-<body class="h-screen flex flex-row flex-wrap bg-slate-300">
-  <header class="flex flex-row justify-between bg-slate-200 h-20 w-full">
-    <h1 class="flex items-center text-3xl ml-8">Jeans 👖</h1>
-    <h2 class="flex items-center text-lg ml-8">"Put your website together, one leg at a time" - Anonymous</h2>
+<body class="h-screen flex flex-row flex-wrap bg-sky-700">
+  <header class="flex flex-row justify-between bg-sky-600 h-20 w-full border-b-4 border-yellow-400 border-dashed">
+    <h1 class="flex items-center text-3xl ml-8 text-white">Jeans 👖</h1>
+    <h2 class="flex items-center text-lg ml-8 text-white">"Put your website together, one leg at a time" - Anonymous</h2>
 
     <nav class="flex flex-row justify-evenly items-center w-1/3">
 
@@ -96,18 +96,18 @@
 
     </nav>
   </header>
-  <main class="flex flex-row flex-wrap justify-evenly items-start bg-slate-300 w-full my-8">
+  <main class="flex flex-row flex-wrap justify-evenly items-start bg-sky-700 w-full my-8">
 
     <!--LEFT SECTION/ COLOR SECTION OF PROJECTagewoinasdf-->
 
     <!--The id "colorSection" identifies the left area of the viewport that contains all color elements-->
 
-    <section id="colorSection" class="flex flex-col h-full min-w-96 w-5/12 bg-slate-200 justify-between rounded-3xl">
+    <section id="colorSection" class="flex flex-col h-full min-w-96 w-5/12 bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
       <div>
-        <h2 class="flex justify-around text-3xl my-8">Color Swatch Generator</h2>
+        <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed">Color Swatch Generator</h2>
 
         <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
-        <form id="colorSearchEls" class="flex flex-row flex-wrap justify-center items-center frow mx-3">
+        <form id="colorSearchEls" class="flex flex-row flex-wrap justify-center items-center frow mx-3 mt-4">
           <label class="mr-3" for="colorSelect">Select a Color:</label>
           <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
           <input class="rounded-sm border-none bg-none h-8 w-8 rounded-3xl mr-3" type="color" id="colorSelect" name="colorSelect" value="#ff0000">
@@ -148,60 +148,17 @@
         </div>
       </div>
       <!--The id "favoriteSwatches" identifies the container that the users favorite swatches will be displayed inside"-->
-      <div id="favoriteSwatches" class="flex mx-4"> Color Search History:</div>
-        <div class="flex flex-row flex-nowrap mx-4 my-4 h-20 overflow-auto">
-
-          <div>
-            <div id="colorSearch1" class="w-20">Search1</div>
-          </div>
-
-          <div>
-            <div id="colorSearch2" class="w-20">Search2</div>
-          </div>
-
-          <div>
-            <div id="colorSearch3" class="w-20">Search3</div>
-          </div>
-
-          <div>
-            <div id="colorSearch4" class="w-20">Search4</div>
-          </div>
-
-          <div>
-            <div id="colorSearch5" class="w-20">Search5</div>
-          </div>
-
-          <div>
-            <div id="colorSearch6" class="w-20">Search6</div>
-          </div>
-
-          <div>
-            <div id="colorSearch7" class="w-20">Search7</div>
-          </div>
-
-          <div>
-            <div id="colorSearch8" class="w-20">Search8</div>
-          </div>
-
-          <div>
-            <div id="colorSearch9" class="w-20">Search9</div>
-          </div>
-
-          <div>
-            <div id="colorSearch10" class="w-20">Search10</div>
-          </div>
-
-        </div>
+      
     </section>
 
     <!--RIGHT SECTION/ IMAGE SECTION OF PROJECT-->
 
     <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
-    <section id="imageSection" class="flex flex-col h-full min-w-96 w-5/12 bg-slate-200 rounded-3xl">
-      <h2 class="flex justify-around text-3xl my-8">Vector Image Generator</h2>
+    <section id="imageSection" class="flex flex-col h-full min-w-96 w-5/12 bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
+      <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed">Vector Image Generator</h2>
 
       <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
-      <form id="imageSearchEls" class="flex flex-row flex-wrap justify-center mx-3">
+      <form id="imageSearchEls" class="flex flex-row flex-wrap justify-center mx-3 mt-4">
         <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
         <input class="py-1 px-3 rounded-full grow" type="search" id="imageSearch" />
         <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
@@ -288,9 +245,8 @@
   </main>
 
   <!--Cant add button to footer for some reason, the footer dissapears. Help pls.-->
-  <footer class="flex flex-row self-end items-center justify-end w-full h-20 bg-slate-200">
-    <button id="saveFavBtn" class="mr-8 bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">Save your
-      Favorites?</button>
+  <footer class="flex flex-row self-end items-center justify-end w-full h-20 bg-sky-600">
+   
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
