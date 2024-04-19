@@ -18,7 +18,7 @@
 
 <body class="h-screen flex flex-row flex-wrap bg-sky-900">
   <div class="w-full bg-sky-700 min-w-[480px]">
-    <header class="flex flex-row justify-between bg-sky-600 h-20 w-full border-b-4 border-yellow-400 border-dashed">
+    <header class="flex flex-row flex-wrap justify-between items-stretch bg-sky-600 h-20 w-full border-b-4 border-yellow-400 border-dashed">
       <h1 class="flex items-center text-3xl ml-8 text-white text-center font-extrabold max-md:text-2xl max-[1030px]:text-2xl">Genes 👖</h1>
       <h2 class="flex items-center text-lg ml-8 text-white max-sm:text-xs max-md:text-sm italic">"Put your website together,
         one leg at a time" - Anonymous</h2>
@@ -27,7 +27,7 @@
 
 
       <button id="openModalBtn"
-        class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium py-1 px-4 rounded-full text-center inline-flex items-center dark:focus:ring-blue-800">
+        class="flex-end text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-semibold py-1 px-4 rounded-full text-center inline-flex items-center dark:focus:ring-blue-800">
         Instructions
       </button>
       <!-- Modal Wrapper -->
@@ -57,7 +57,7 @@
       </div>
 
       <button id="creatorsOpenModalBtn"
-        class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 rounded-full text-center inline-flex items-center">
+        class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 rounded-full text-center inline-flex items-center font-semibold">
         Creators
       </button>
       <!-- Modal Wrapper -->
@@ -130,7 +130,7 @@
               <input class="py-1 px-3 rounded-full grow text-black" type="search" id="colorSearch" />
               <!--The id "colorSearchBtn" identifies the button the user will press to initiate the search for the typed color-->
               <button id="colorSearchBtn"
-                class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 mx-3 rounded-full">Search</button>
+                class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 mx-3 rounded-full font-semibold">Search</button>
             </div>
 
           </form>
@@ -157,7 +157,7 @@
 
       <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
       <section id="imageSection"
-        class="ml-2 max-md:ml-0 max-sm:ml-0 h-max flex flex-col min-w-96 w-5/12 max-w-lg max-sm:mt-8 max-md:mt-8 bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
+        class="ml-2 max-md:ml-0 max-sm:ml-0 h-max flex flex-col min-w-96 w-5/12 max-w-lg max-sm:mt-8 max-md:mt-8 max-[800px]:mt-8 max-[800px]:ml-0 bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
         <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed font-semibold">Vector Image Generator
         </h2>
 
@@ -167,7 +167,7 @@
           <input class="py-1 px-3 rounded-full grow text-black" type="search" id="imageSearch" />
           <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
           <button id="imageSearchBtn"
-            class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 ml-3 rounded-full">Search</button>
+            class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 ml-3 rounded-full font-semibold">Search</button>
         </form>
         <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
 
