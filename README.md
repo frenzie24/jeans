@@ -52,9 +52,16 @@ functions for form information sent in will be in the format of subjectSubmit.
 # Credits
 
 - Tailwinds CSS is used for our styling and wiremapping
+
+-API used for colors results: https://www.thecolorapi.com/docs
+
+-API used for vector image results: https://pixabay.com/api/docs/
+
 - The following link was used to create modal functions for the "Creators" and "Instructions" buttons.
 https://replit.com/@ProgrammingBasi/TailwindCSS-Modal#index.html
 
+JSON colors array used for our text search results was provided by 
+https://gist.github.com/jennyknuth/e2d9ee930303d5a5fe8862c6e31819c5
 
 - Link to our repository
 https://github.com/frenzie24/genes

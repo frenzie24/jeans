@@ -87,6 +87,10 @@
                   class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Breeanna
                   Nouskhajian</a>
               </li>
+               <li>
+                <a href="https://github.com/frenzie24/genes/blob/main/README.md"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> ReadMe Page</a>
+              </li>
             </ul>
 
             <button id="creatorsCloseModalBtn" type="button"
@@ -126,28 +130,14 @@
       <div class="flex justify-center">
         <div id="swatchContainer" class="w-full flex flex-row flex-wrap mb-4">
           <div id="monochrome" class="flex flex-row">
-            <div class="w-1/5">5</div>
-            <div class="w-1/5">5</div>
-            <div class="w-1/5">5</div>
-            <div class="w-1/5">5</div>
-            <div class="w-1/5">5</div>
+            <div class="w-1/5 bg-red"></div>
+            <div class="w-1/5 bg-green"></div>
+            <div class="w-1/5 bg-blue"></div>
+            <div class="w-1/5 bg-cyan"></div>
+            <div class="w-1/5 bg-yellow"></div>
 
           </div>
-          <div id="monochrome-dark">
-            <img src="testColorImages/test02.png">
-          </div>
-          <div id="monochrome-light">
-            <img src="testColorImages/test03.png">
-          </div>
-          <div id="analogic">
-            <img src="testColorImages/test01.png">
-          </div>
-          <div id="complement">
-            <img src="testColorImages/test02.png">
-          </div>
-          <div id="analogic-complement" class="w-1/5"></div>
-          <div id="triad"></div>
-          <div id="quad"></div>
+       
         </div>
       </div>
       <!--The id "favoriteSwatches" identifies the container that the users favorite swatches will be displayed inside"-->
@@ -157,11 +147,11 @@
     <!--RIGHT SECTION/ IMAGE SECTION OF PROJECT-->
 
     <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
-    <section id="imageSection" class="flex flex-col h-full min-w-96 w-5/12 max-w-lg bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
+    <section id="imageSection" class="h-max flex flex-col min-w-96 w-5/12 max-w-lg max-sm:mt-8 bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
       <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed">Vector Image Generator</h2>
 
       <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
-      <form id="imageSearchEls" class="flex flex-row flex-wrap justify-center mx-3 my-4">
+      <form id="imageSearchEls" class="flex flex-row flex-nowrap justify-start mx-3 my-4">
         <!--The id "imageSearch" identifies the label of the search box for inputing image search criteria-->
         <input class="py-1 px-3 rounded-full grow text-black" type="search" id="imageSearch" />
         <!--The id "imageSearchBtn" identifies the button to be pressed to submit image search criteria"-->
@@ -173,7 +163,7 @@
       <div class="grid gap-4">
         <div class="justify-center flex flex-row mx-4 mb-4" id="imageResultCard0">
           <img class=" max-h-96 max-w-full rounded-lg" id="imageResult0"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
+            src="https://cdn.pixabay.com/animation/2023/08/11/21/18/21-18-05-265_512.gif" alt="">
         </div>
       </div>
       <div id="imageContainer" class="flex flex-row flex-nowrap mx-4 my-4 overflow-auto">
@@ -226,7 +216,7 @@
   </main>
 
   <!--Cant add button to footer for some reason, the footer dissapears. Help pls.-->
-  <footer class="flex flex-row self-end items-center justify-end w-full h-16 bg-sky-600">
+  <footer class="flex flex-row items-center justify-end w-full h-16 bg-sky-600">
    
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
