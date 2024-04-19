@@ -123,7 +123,7 @@ function createSwathChildrenObjs(mode, colors) {
     // let swatc
 }
 
-function getSchemeByHex(hex, type) {
+async function getSchemeByHex(hex, type) {
     let ps = `https://www.thecolorapi.com/scheme?hex=${hex}&format=json&mode=${type}`;
     fetch(ps).then(result => result.json()).then(result => {
         let rowAttr = {
@@ -149,7 +149,7 @@ function getSchemeByHex(hex, type) {
 
         // may need to set up async and set a variable instead of return
         // return result
-    });
+    })
 }
 
 function testGenerics() {
