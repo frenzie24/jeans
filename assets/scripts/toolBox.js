@@ -68,10 +68,12 @@ function setItem(store, val) {
 
 
 // creates an element with tag and sets initial attributes to data
-function generateElement(tag, data) {
+function generateElement(tag, attr, data) {
     // uses jQuery object $ to create an element with passed tag and data
     // so it breaks down to $("<section>");, data);
-    let element = $(`<${tag}>`, data);
+    let element = $(`<${tag}>`, attr);
+    //$().data('key', val: string, obj, etc)
+    element.data('dataobj', data);
     return element;
 }
 // creates an element with tag and sets its value to val, no attribute assignments

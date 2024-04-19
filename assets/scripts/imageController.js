@@ -136,17 +136,17 @@ function populateImageElements(vectors) {
     for (let i = 1; i < vectors.length; i++) {
         let card = generateElement("div", { id: `${cardSting}${i}` });
         card.on('click', handleImageCardClick)
-        let data = {
+        let attr = {
             class: classString,
             src: vectors[i].vectorURL,
             id: `${imageString}${i}`,
             alt: vectors[i].tags,
-            data: vectors[i]
+            
         }
         card.data('vector-info', vectors[i]);
         card.attr('data-vector-info', vectors[i]);
         //        card.attr('data-vectorInfo', JSON.stringify(vectors[i]))
-        let image = generateElement('img', data);
+        let image = generateElement('img', attr, vectors[i]);
         card.append(image);
 
         vectorCards.push(card);
