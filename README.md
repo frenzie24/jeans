@@ -33,9 +33,21 @@ functions for reading will be read subjectData.
 functions for form information sent in will be in the format of subjectSubmit.
 
 # Usage
-- Click the "instructions" button to display a model containing details on how to use the app.
+
+- Home Page
+
+<img src="/Users/stephen/Documents/UCF/projects/genes/Screen Shot 2024-04-19 at 3.09.39 AM.png">
+
+- Click the "instructions" button to display a model containing details on how to use the app. See image below.
+
+<img src="/Users/stephen/Documents/UCF/projects/genes/Screen Shot 2024-04-19 at 3.10.04 AM.png">
+
 - To generate a color theme, start by typing the name of a color into the color search bar, or click the provided color block to select from a color picker. User input will generate themes based on selection.
+
 - To generate an image, type into the search bar the type of image you want and click "search". Several images pertaining to that search will display.
+
+<img src="/Users/stephen/Documents/UCF/projects/genes/Screen Shot 2024-04-19 at 3.10.24 AM.png">
+- To see the list of creators for this application, click the "Creators" button on the right of the header.
 
 # Credits
 
