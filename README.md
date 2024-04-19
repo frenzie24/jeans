@@ -48,4 +48,7 @@ functions for form information sent in will be in the format of subjectSubmit.
 - Tailwinds CSS is used for our styling and wiremapping
 - The following link was used to create modal functions for the "Creators" and "Instructions" buttons.
 https://replit.com/@ProgrammingBasi/TailwindCSS-Modal#index.html
-- 
+
+
+- Link to our repository
+https://github.com/frenzie24/genes
