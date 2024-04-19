@@ -172,7 +172,8 @@ const stringToColour = (str) => {
 }
 
 function renderSchemes(colorData) {
-    setItem('lastSchemeHex', colorData.hex);
+    localStorage.setItem('scheme', colorData);
+    debugger;
     $('#swatchContainer').empty();
     schemes.forEach(type => {
         console.log(colorData)
@@ -255,8 +256,8 @@ $(() => {
         }
     });
 
-    let lastScheme = getItem('lastSchemeHex') ;
-    
+    let lastScheme = localStorage.getItem('scheme') ;
+    debugger;
     renderSchemes(lastScheme ? lastScheme : findColorDataByName('red').hex.slice(1) );
 
 });
