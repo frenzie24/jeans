@@ -8,8 +8,8 @@
   <title>GENES</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -17,7 +17,7 @@
 <body class="h-screen flex flex-row flex-wrap bg-slate-300">
   <header class="flex flex-row justify-between bg-slate-200 h-20 w-full">
     <h1 class="flex items-center text-3xl ml-8">Jeans 👖</h1>
-    
+
     <nav class="flex flex-row justify-evenly items-center w-1/3">
 
 
@@ -49,61 +49,41 @@
         </div>
       </div>
 
-        <button
-          id="creatorsOpenModalBtn"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 py-1 px-4 rounded-full text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Creators
-        </button>
-        <!-- Modal Wrapper -->
-        <div id="creatorsModal" class="hidden fixed z-10 inset-0">
-          <div
-            class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity"
-          >
-            <!-- Modal Box -->
-            <div
-              class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3"
-            >
-              <h3
-                class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase"
-                id="modal-title"
-              >
-                Creators
-              </h3>
-              <br>
-              <ul
-                class="py-2 text-sm text-gray-700 dark:text-gray-500"
-                aria-labelledby="dropdownDefaultButton"
-              >
-                <li>
-                  <a
-                    href="https://github.com/sjastrow92"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Stephen Jastrow</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/Dylan-Thrasher"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Dylan Thrasher</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/frenzie24"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Charles Gross</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/BreeNous"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Breeanna Nouskhajian</a
-                  >
-                </li>
-              </ul>
+      <button id="creatorsOpenModalBtn"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 py-1 px-4 rounded-full text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Creators
+      </button>
+      <!-- Modal Wrapper -->
+      <div id="creatorsModal" class="hidden fixed z-10 inset-0">
+        <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity">
+          <!-- Modal Box -->
+          <div class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3">
+            <h3 class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase" id="modal-title">
+              Creators
+            </h3>
+            <br>
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-500" aria-labelledby="dropdownDefaultButton">
+              <li>
+                <a href="https://github.com/sjastrow92"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Stephen
+                  Jastrow</a>
+              </li>
+              <li>
+                <a href="https://github.com/Dylan-Thrasher"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dylan
+                  Thrasher</a>
+              </li>
+              <li>
+                <a href="https://github.com/frenzie24"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Charles
+                  Gross</a>
+              </li>
+              <li>
+                <a href="https://github.com/BreeNous"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Breeanna
+                  Nouskhajian</a>
+              </li>
+            </ul>
 
             <button id="creatorsCloseModalBtn" type="button"
               class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider">
@@ -121,42 +101,46 @@
 
     <!--The id "colorSection" identifies the left area of the viewport that contains all color elements-->
 
-    <section id="colorSection" class="flex flex-col h-full  min-w-96 w-5/12 bg-slate-200 rounded-3xl">
-      <h2 class="flex justify-around text-3xl">Color Swatch Generator</h2>
-      <br>
+    <section id="colorSection" class="flex flex-col h-full min-w-96 w-5/12 bg-slate-200 justify-between rounded-3xl">
+      <div>
+        <h2 class="flex justify-around text-3xl my-8">Color Swatch Generator</h2>
 
-      <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
-      <form id="colorSearchEls" class="flex flex-row flex-wrap justify-center frow mx-3">
-        <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
-        <input class="py-1 px-3 rounded-full grow" type="search" id="colorSearch" />
-        <!--The id "colorSearchBtn" identifies the button the user will press to initiate the search for the typed color-->
-        <button id="colorSearchBtn"
-          class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded-full">Search</button>
-        <label for="colorSelect">Select a Color:</label>
-        <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
-        <input class="rounded-sm border-none bg-none h-8 w-8 rounded-3xl" type="color" id="colorSelect" name="colorSelect" value="#ff0000">
-      </form>
+        <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
+        <form id="colorSearchEls" class="flex flex-row flex-wrap justify-center frow mx-3">
+          <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
+          <input class="py-1 px-3 rounded-full grow" type="search" id="colorSearch" />
+          <!--The id "colorSearchBtn" identifies the button the user will press to initiate the search for the typed color-->
+          <button id="colorSearchBtn"
+            class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded-full">Search</button>
+          <label for="colorSelect">Select a Color:</label>
+          <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
+          <input class="rounded-sm border-none bg-none h-8 w-8 rounded-3xl" type="color" id="colorSelect"
+            name="colorSelect" value="#ff0000">
+        </form>
+      </div>
       <!--The id "swatchContainer" identifies the container for the swatches that will be displayed inside"-->
-      <div id="swatchContainer" class="grid grid-cols-1 gap-4 mx-4 my-4">
-        <div class="">
-          <img src="testColorImages/test01.png">
-        </div>
-        <div>
-          <img src="testColorImages/test02.png">
-        </div>
-        <div>
-          <img src="testColorImages/test03.png">
-        </div>
-        <div>
-          <img src="testColorImages/test01.png">
-        </div>
-        <div>
-          <img src="testColorImages/test02.png">
+      <div class="flex justify-center">
+        <div id="swatchContainer" class="grid grid-cols-1 gap-4 mx-4 my-4">
+          <div class="">
+            <img src="testColorImages/test01.png">
+          </div>
+          <div>
+            <img src="testColorImages/test02.png">
+          </div>
+          <div>
+            <img src="testColorImages/test03.png">
+          </div>
+          <div>
+            <img src="testColorImages/test01.png">
+          </div>
+          <div>
+            <img src="testColorImages/test02.png">
+          </div>
         </div>
       </div>
       <!--The id "favoriteSwatches" identifies the container that the users favorite swatches will be displayed inside"-->
       <div id="favoriteSwatches" class="flex mx-4 h-20"> Color Search History:
-   
+
       </div>
     </section>
 
@@ -201,7 +185,7 @@
             src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
         </div>
         <div id="imageResultCard2">
-          <img id="imageResult2"" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+          <img id="imageResult2"" class=" mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
             src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
         </div>
         <div id="imageResultCard3">
