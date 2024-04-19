@@ -104,7 +104,7 @@
 
     <!--The id "colorSection" identifies the left area of the viewport that contains all color elements-->
 
-    <section id="colorSection" class="flex flex-col h-full min-w-96 w-5/12 bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
+    <section id="colorSection" class="flex flex-col min-w-96 w-5/12 bg-sky-600 text-white max-w-lg rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
       <div>
         <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed">Color Swatch Generator</h2>
 
@@ -113,7 +113,7 @@
           <label class="mr-3" for="colorSelect">Select a Color:</label>
           <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
           <input class="rounded-sm border-none bg-none h-8 w-8 rounded-3xl mr-3" type="color" id="colorSelect" name="colorSelect" value="#ff0000">
-          <p class="mr-3">or Search:</p>
+          
           <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
           <input class="py-1 px-3 rounded-full grow text-black" type="search" id="colorSearch" />
           <!--The id "colorSearchBtn" identifies the button the user will press to initiate the search for the typed color-->
@@ -123,7 +123,7 @@
       </div>
       <!--The id "swatchContainer" identifies the container for the swatches that will be displayed inside"-->
       <div class="flex justify-center">
-        <div id="swatchContainer" class="w-full flex flex-row flex-wrap ">
+        <div id="swatchContainer" class="w-full flex flex-row flex-wrap mb-4">
           <div id="monochrome" class="flex flex-row">
             <div class="w-1/5">5</div>
             <div class="w-1/5">5</div>
@@ -156,7 +156,7 @@
     <!--RIGHT SECTION/ IMAGE SECTION OF PROJECT-->
 
     <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
-    <section id="imageSection" class="flex flex-col h-full min-w-96 w-5/12 bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
+    <section id="imageSection" class="flex flex-col h-full min-w-96 w-5/12 max-w-lg bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
       <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed">Vector Image Generator</h2>
 
       <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
@@ -225,7 +225,7 @@
   </main>
 
   <!--Cant add button to footer for some reason, the footer dissapears. Help pls.-->
-  <footer class="flex flex-row self-end items-center justify-end w-full h-20 bg-sky-600">
+  <footer class="flex flex-row self-end items-center justify-end w-full h-16 bg-sky-600">
    
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -86,14 +86,14 @@ function createSwathChildrenObjs(mode, colors) {
         const swatchContainerAttr = {
             id: `${mode}Color${i}`,
 
-            class: `w-1/${length} h-20 flex flex-row flex-wrap items-start`,
+            class: `w-1/${length} h-16 flex flex-row flex-wrap items-start`,
         }
         const swatchAttr = {
-            class: `w-full h-12 bg-[${colors[i].hex.value}]`,
+            class: `w-full h-9 bg-[${colors[i].hex.value}]`,
             // style: { backgroundColor: `${colors[i].hex.value}` }
         }
         let footer = {
-            attr: { class: "w-full h-8 bg-white text-black text-base text-center" },
+            attr: { class: "w-full h-7 bg-white text-black text-base text-center" },
             data: `${colors[i].hex.value}`
         }
 
@@ -179,6 +179,7 @@ function renderSchemes(colorData) {
         console.log(colorData)
         getSchemeByHex(colorData, type);
     })
+
 }
 
 
