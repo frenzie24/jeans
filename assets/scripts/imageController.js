@@ -1,5 +1,9 @@
 const pk = "43404962-ba2a24215101c788c299fa20a";
 
+const classString = `mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
+const imageString = `imageResult`;
+const cardSting = `${imageString}Card`;
+
 // checks if keywords is an array and parses it into a query string 
 function parseKeywords(keywords) {
 
@@ -90,31 +94,60 @@ let hitObj = {
 // test for the first element in the hit array
 //  $("#testImg").attr('src', hits[0].vectorURL);
 
-    })
+function handleImageCardClick(event) {
+
+    let card = $('#' + event.target.parentElement.id);
+    let cardData = card.data('vector-info');
+    let featured = $("#imageResult0");
+
+    let featuredData = featured.data('vector-info');
+    let cardImg = $('#'+event.target.id);
+    let oldFeaturedSrc = featured.attr('src');
+
+    let featuredCard = $('#imageResultCard0');
+    featured.attr('src', cardImg.attr('src'));
+    featuredCard.data('vector-info', cardData);
+
+    cardImg.attr('src', oldFeaturedSrc);
+    card.data('vector-info', featuredData);
+
+    
+/*
+    let newFeaturedCard = generateElement('div', { class: 'mx-4 mb-4', id: 'iamgeResultsCard0' });
+    newFeaturedCard.data('vector-info', featuredData);
+    newFeaturedCard.attr('data-vector-info', featuredData);
+    newFeaturedCard.append(event.target);
+
+    card = featuredCard;
+    featuredCard = newFeaturedCard;*/
+    debugger;
 }
 
 function populateImageElements(vectors) {
-    let featured = $(`#imageResult${0}`);
+    let featured = $(`#imageResult0`);
     featured.attr('src', vectors[0].vectorURL);
-
+    featured.data('vector-info', vectors[0]);
     let iamgeContainer = $("#imageContainer");
     iamgeContainer.empty();
     iamgeContainer.addClass(`flex flex-row flex-nowrap mx-4 my-4 overflow-auto`)
-    const classString = `mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
-    const imageString = `imageResults`;
-    const cardSting = `${imageString}Card`;
+
 
     let vectorCards = [];
     for (let i = 1; i < vectors.length; i++) {
-        let card = generateElement("div", { id: `${cardSting}${i}` })
-        let data = {
+        let card = generateElement("div", { id: `${cardSting}${i}` });
+        card.on('click', handleImageCardClick)
+        let attr = {
             class: classString,
             src: vectors[i].vectorURL,
             id: `${imageString}${i}`,
-            alt: vectors[i].tags
+            alt: vectors[i].tags,
+            
         }
-
-        card.append(generateElement('img', data));
+        card.data('vector-info', vectors[i]);
+        card.attr('data-vector-info', vectors[i]);
+        //        card.attr('data-vectorInfo', JSON.stringify(vectors[i]))
+        let image = generateElement('img', attr, vectors[i]);
+        card.append(image);
 
         vectorCards.push(card);
         //card.parent().append(card);
@@ -127,6 +160,7 @@ function onImageSearch(event) {
     event.preventDefault();
     debugger;
     let keywords = event.target.value;
+    localStorage.setItem('keywords', keywords);
     let vectors = getVectorsByKeywords(keywords);
     console.log(vectors);
     debugger;
@@ -145,8 +179,9 @@ $(() => {
             onImageSearch(e);
         }
     });
-
-
+    let last = localStorage.getItem('keywords');
+    
+    getVectorsByKeywords(last ? last : 'cats');
     $('#imageSearchBtn').on('click', onImageSearchClick);
 
 
