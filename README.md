@@ -66,5 +66,4 @@ https://gist.github.com/jennyknuth/e2d9ee930303d5a5fe8862c6e31819c5
 - Link to our repository
 https://github.com/frenzie24/jeans
 
-- deployment link
 https://frenzie24.github.io/jeans
