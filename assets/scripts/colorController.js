@@ -230,19 +230,17 @@ function onColorPickerInput(ev) {
 function onColorSearch(ev) {
     ev.preventDefault();
     let colorInput = $("#colorSearch");
-    if (colorInput.val().slice(1) == '#') {
-        renderSchemes(findColorDataByName(colorInput.val()).hex.slice(1));
-    } else  renderSchemes(colorInput.val().slice(1))
+    let colorString = colorInput.val();
+    if(colorInput.val().indexOf('#')==-1) {
+        colorString = findColorDataByName(colorString).hex;
+    }
+    
+    $("#colorSelect").val(colorString);
+    colorString = colorString.replaceAll('#',"");
+    renderSchemes(colorString);
    
 }
 
-function onColorSearchBtnClick(ev) {
-    ev.preventDefault();
-    let colorInput = $("#colorSearch"); 
-    if (colorInput.val().slice(1) == '#') {
-        renderSchemes(findColorDataByName(colorInput.val()).hex.slice(1));
-    } else  renderSchemes(colorInput.val().slice(1))
-}
 
 // document ready 
 $(() => {
@@ -255,7 +253,7 @@ $(() => {
     let colorSearchBtn = $('#colorSearchBtn');
 
     // add click event to csbtn
-    colorSearchBtn.on('click', onColorSearchBtnClick)
+    colorSearchBtn.on('click', onColorSearch)
 
     colorSelect.on('click', onColorPickerClick);
     colorSelect.on('change', onColorPickerChange);
