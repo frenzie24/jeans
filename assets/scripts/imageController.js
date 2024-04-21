@@ -46,9 +46,9 @@ function getVectorsByKeywords(keywords) {
         //     if (hit.vectorURL && '.svg' != hit.vectorURL.slice(-4)) {
         //         console.log('hit about to be removed');
         //         console.log(hit);
-        //         debugger;
+        //         
         //         hits.splice(hits.indexOf(hit), 1);
-        //         debugger;
+        //         
         //     }
 
         hits = hits.filter(hit => hit.vectorURL && hit.type == 'vector/svg');
@@ -59,8 +59,9 @@ function getVectorsByKeywords(keywords) {
              $(`#imageResult${i}`).attr('src', hits[i].vectorURL);
          }
  */
+         // fills/creates image elements based on hits
         populateImageElements(hits);
-        debugger;
+
     });
 
 }
@@ -91,6 +92,7 @@ let hitObj = {
     vectorURL: hit.vectorURL
 }
 */
+
 // test for the first element in the hit array
 //  $("#testImg").attr('src', hits[0].vectorURL);
 
@@ -99,10 +101,10 @@ function handleImageCardClick(event) {
     // image interacted with
     let card = $('#' + event.target.parentElement.id);
     let cardData = card.data('vector-info');
-     // old featured image
+    // old featured image
     let featured = $("#imageResult0");
     let featuredData = featured.data('vector-info');
-    let cardImg = $('#'+event.target.id);
+    let cardImg = $('#' + event.target.id);
     // we need to store the src of the old featured image temporarily
     let oldFeaturedSrc = featured.attr('src');
     // featured image container
@@ -110,12 +112,11 @@ function handleImageCardClick(event) {
     // featured image is now new 
     featured.attr('src', cardImg.attr('src'));
     featuredCard.data('vector-info', cardData);
-    
+
     // container of selected image now holds old feature image data
     cardImg.attr('src', oldFeaturedSrc);
     card.data('vector-info', featuredData);
 
-    debugger;
 }
 
 function populateImageElements(vectors) {
@@ -136,7 +137,7 @@ function populateImageElements(vectors) {
             src: vectors[i].vectorURL,
             id: `${imageString}${i}`,
             alt: vectors[i].tags,
-            
+
         }
         card.data('vector-info', vectors[i]);
         card.attr('data-vector-info', vectors[i]);
@@ -149,14 +150,17 @@ function populateImageElements(vectors) {
     iamgeContainer.append(vectorCards);
 }
 
+// when user searches for an image, 
 function onImageSearch(event) {
     event.preventDefault();
-    debugger;
+
     let keywords = event.target.value;
+    // store our new keyword
     localStorage.setItem('keywords', keywords);
+    // api call with keyword, this will populate the image elements
     let vectors = getVectorsByKeywords(keywords);
     console.log(vectors);
-    debugger;
+
 }
 
 function onImageSearchClick(event) {
@@ -167,13 +171,16 @@ function onImageSearchClick(event) {
 
 $(() => {
     let imageSearch = $("#imageSearch");
+    // handles enter key press down while in image search bar
     imageSearch.on("keydown", function (e) {
         if (e.keyCode == 13) {
             onImageSearch(e);
         }
     });
+    // gets the last stored key word
     let last = localStorage.getItem('keywords');
-    
+
+    // if last exists draw the vectors based on last, otherwise populate with data from cats
     getVectorsByKeywords(last ? last : 'cats');
     $('#imageSearchBtn').on('click', onImageSearchClick);
 

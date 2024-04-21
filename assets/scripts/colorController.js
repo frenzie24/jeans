@@ -42,7 +42,7 @@ function onSwatchClick(ev) {
     $("#colorSelect").val(color);
 
     $("#colorSearch").val(color);
-    debugger;
+    
     //get swatch [0] hex pass to get SchemeByHex with for loop for the schemes
 
 }
@@ -123,8 +123,12 @@ function createSwathChildrenObjs(mode, colors) {
     // let swatc
 }
 
-async function getSchemeByHex(hex, type) {
-    let ps = `https://www.thecolorapi.com/scheme?hex=${hex}&format=json&mode=${type}`;
+async function getSchemeByHex(hex, mode) {
+    // allows schemes to be drawn based on # of useful entries in pallette
+    let count = 5;
+    if(mode == "quad") count = 4;
+    if (mode == "triad") count = 3;
+    let ps = `https://www.thecolorapi.com/scheme?hex=${hex}&format=json&mode=${mode}&count=${count}`;
     fetch(ps).then(result => result.json()).then(result => {
         let rowAttr = {
             id: result.mode,
@@ -181,7 +185,7 @@ const stringToColour = (str) => {
 
 function renderSchemes(colorData) {
     localStorage.setItem('scheme', colorData);
-    debugger;
+    
     $('#swatchContainer').empty();
     schemes.forEach(type => {
         console.log(colorData)
@@ -260,14 +264,14 @@ $(() => {
     colorSelect.on('input', onColorPickerInput);
 
     colorInput.on("keydown", function (e) {
-        debugger;
+        
         if (e.keyCode == 13) {
             onColorSearch(e)
         }
     });
 
     let lastScheme = localStorage.getItem('scheme');
-    debugger;
+    
     renderSchemes(lastScheme ? lastScheme : findColorDataByName('red').hex.slice(1));
 
 });
