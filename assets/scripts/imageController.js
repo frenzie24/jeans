@@ -133,7 +133,7 @@ function populateImageElements(vectors) {
     iamgeContainer.empty();
    // iamgeContainer = ;
    // $("#imageSection").append(generateElement('div', {id:'imageContainer', class: imageContainerClass}));
-   iamgeContainer.addClass("flex flex-row flex-nowrap justify-center self-start bg-gray-100 rounded overflow-auto mb-4")
+   //iamgeContainer.addClass("flex flex-row flex-nowrap bg-gray-100 rounded mx-4 mb-4 overflow-auto ")
 
 
  iamgeContainer = $("#imageContainer");
