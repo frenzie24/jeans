@@ -5,8 +5,6 @@
 // "https://www.thecolorapi.com/id?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=json"
 
 
-
-
 // creates a container based on pased objs containing relevant attributes and data [ {attr: {}, data: {}} ]
 function createContainer(containerObj, contentObj, footerObj) {
 
@@ -127,14 +125,14 @@ function generateSwatchRowData(mode, colors) {
         const hex = `${colors[i].hex.value}`;
         const swatchContainerAttr = {
             id: `${mode}Color${i}`,
-            class: `w-1/${length} h-16 flex flex-row flex-wrap items-start`,
+            class: `${hoverAnimString} w-1/${length} h-16 flex flex-row flex-wrap items-start`,
         }
         const swatchAttr = {
             class: `w-full h-9 bg-[${hex}]`,
             // style: { backgroundColor: `${colors[i].hex.value}` }
         }
         let footer = {
-            attr: { class: "w-full h-7 bg-white text-black text-base text-center" },
+            attr: { class: "w-full h-7 bg-gray-100 text-black text-base font-medium text-center" },
             data: `${hex}`
         }
 
