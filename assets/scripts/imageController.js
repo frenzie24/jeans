@@ -1,6 +1,7 @@
 const pk = "43404962-ba2a24215101c788c299fa20a";
 
-const classString = `transition ease-in-out delay-150 hover:border-gray-300 hover:scale-110 mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
+const hoverAnimString = `transition ease-in-out delay-150 hover:border-gray-300 hover:scale-110`
+const classString = `flex flex-row flex-wrap justify-center items-center mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
 const imageString = `imageResult`;
 const cardSting = `${imageString}Card`;
 
@@ -130,15 +131,18 @@ function populateImageElements(vectors) {
     let iamgeContainer = $("#imageContainer");
     let imageContainerClass = iamgeContainer.attr('class');
     iamgeContainer.empty();
-    iamgeContainer.addClass(imageContainerClass)
+   // iamgeContainer = ;
+   // $("#imageSection").append(generateElement('div', {id:'imageContainer', class: imageContainerClass}));
+   iamgeContainer.addClass(imageContainerClass)
 
 
+ iamgeContainer = $("#imageContainer");
     let vectorCards = [];
     for (let i = 1; i < vectors.length; i++) {
-        let card = generateElement("div", { id: `${cardSting}${i}` });
+        let card = generateElement("div", { id: `${cardSting}${i}`, class: `${classString}`});
         card.on('click', handleImageCardClick)
         let attr = {
-            class: classString,
+            class: `${hoverAnimString} ${classString}`,
             src: vectors[i].vectorURL,
             id: `${imageString}${i}`,
             alt: vectors[i].tags,

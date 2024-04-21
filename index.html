@@ -8,7 +8,7 @@
 
   <title>Jeans</title>
 
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,83 +21,88 @@
 
 <body class="h-screen flex flex-row flex-wrap bg-sky-700">
   <div class="w-full flex flex-row flex-wrap m-auto bg-sky-700 min-w-[480px]">
-    <header class="max-sm:h-28 flex flex-row flex-wrap self-start justify-between items-stretch bg-sky-600 h-20 w-full border-b-4 border-yellow-400 border-dashed">
-      <h1 class="flex items-center text-3xl ml-8 text-white text-center font-extrabold max-md:text-2xl max-[1030px]:text-2xl">Jeans 👖</h1>
-      <h2 class="flex items-center text-lg ml-8 text-white max-sm:text-xs max-md:text-sm italic">"Put your website together,
+    <header
+      class="max-sm:h-28 flex flex-row flex-wrap self-start justify-between items-stretch bg-sky-600 h-20 w-full border-b-4 border-yellow-400 border-dashed">
+      <h1
+        class="flex items-center text-3xl ml-8 text-white text-center font-extrabold max-md:text-2xl max-[1030px]:text-2xl">
+        Jeans 👖</h1>
+      <h2 class="flex items-center text-lg ml-8 text-white max-sm:text-xs max-md:text-sm italic">"Put your website
+        together,
         one leg at a time" - Anonymous</h2>
 
       <nav class="flex flex-row justify-evenly items-center w-1/3">
 
 
-      <button id="openModalBtn"
-        class="border-2 border-sky-500 flex-end text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-semibold py-1 px-4 rounded-full text-center inline-flex items-center dark:focus:ring-blue-800">
-        Instructions
-      </button>
-      <!-- Modal Wrapper -->
-      <div id="modal" class="hidden fixed z-10 inset-0">
-        <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity">
-          <!-- Modal Box -->
-          <div class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3">
-            <h3 class="text-5xl leading-10 font-medium text-purple-700 tracking-wider uppercase">
-              Page Instructions
-            </h3>
-            <p class="text-center mt-14 text-xl text-gray-500">
-              For generating color swatches - Either type a color in the
-              search bar or select a color from the "Select a Color" preview
-              window.
-              <br />
-              For generating a vector image - Type in your search and click
-              the "Search Button".
-              <br>
-              The site will remember your last searches for you by saving locally!
-            </p>
-            <button id="closeModalBtn" type="button"
-              class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider">
-              Close
-            </button>
+        <button id="openModalBtn"
+          class="border-2 border-sky-500 flex-end text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-semibold py-1 px-4 rounded-full text-center inline-flex items-center dark:focus:ring-blue-800">
+          Instructions
+        </button>
+        <!-- Modal Wrapper -->
+        <div id="modal" class="hidden fixed z-10 inset-0">
+          <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity">
+            <!-- Modal Box -->
+            <div class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3">
+              <h3 class="text-5xl leading-10 font-medium text-purple-700 tracking-wider uppercase">
+                Page Instructions
+              </h3>
+              <p class="text-center mt-14 text-xl text-gray-500">
+                For generating color swatches - Either type a color in the
+                search bar or select a color from the "Select a Color" preview
+                window.
+                <br />
+                For generating a vector image - Type in your search and click
+                the "Search Button".
+                <br>
+                The site will remember your last searches for you by saving locally!
+              </p>
+              <button id="closeModalBtn" type="button"
+                class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider">
+                Close
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <button id="creatorsOpenModalBtn"
-        class="border-2 border-sky-500 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 rounded-full text-center inline-flex items-center font-semibold">
-        Creators
-      </button>
-      <!-- Modal Wrapper -->
-      <div id="creatorsModal" class="hidden fixed z-10 inset-0">
-        <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity">
-          <!-- Modal Box -->
-          <div class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3">
-            <h3 class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase" id="modal-title">
-              Creators
-            </h3>
-            <br>
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-500" aria-labelledby="dropdownDefaultButton">
-              <li>
-                <a href="https://github.com/sjastrow92"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Stephen
-                  Jastrow</a>
-              </li>
-              <li>
-                <a href="https://github.com/Dylan-Thrasher"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dylan
-                  Thrasher</a>
-              </li>
-              <li>
-                <a href="https://github.com/frenzie24"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Charles
-                  Gross</a>
-              </li>
-              <li>
-                <a href="https://github.com/BreeNous"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Breeanna
-                  Nouskhajian</a>
-              </li>
-               <li>
-                <a href="https://github.com/frenzie24/genes/blob/main/README.md"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> ReadMe Page</a>
-              </li>
-            </ul>
+        <button id="creatorsOpenModalBtn"
+          class="border-2 border-sky-500 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 rounded-full text-center inline-flex items-center font-semibold">
+          Creators
+        </button>
+        <!-- Modal Wrapper -->
+        <div id="creatorsModal" class="hidden fixed z-10 inset-0">
+          <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-opacity">
+            <!-- Modal Box -->
+            <div class="flex flex-col items-center justify-between bg-white p-20 rounded w-2/3">
+              <h3 class="text-5xl leading-6 font-medium text-purple-700 tracking-wider uppercase" id="modal-title">
+                Creators
+              </h3>
+              <br>
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-500" aria-labelledby="dropdownDefaultButton">
+                <li>
+                  <a href="https://github.com/sjastrow92"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Stephen
+                    Jastrow</a>
+                </li>
+                <li>
+                  <a href="https://github.com/Dylan-Thrasher"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dylan
+                    Thrasher</a>
+                </li>
+                <li>
+                  <a href="https://github.com/frenzie24"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Charles
+                    Gross</a>
+                </li>
+                <li>
+                  <a href="https://github.com/BreeNous"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Breeanna
+                    Nouskhajian</a>
+                </li>
+                <li>
+                  <a href="https://github.com/frenzie24/genes/blob/main/README.md"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> ReadMe
+                    Page</a>
+                </li>
+              </ul>
 
               <button id="creatorsCloseModalBtn" type="button"
                 class="border border-gray-200 px-10 py-3 mt-10 bg-red-500 hover:bg-red-600 text-white rounded uppercase tracking-wider">
@@ -118,7 +123,8 @@
       <section id="colorSection"
         class="mr-2 max-md:mr-0 max-sm:mr-0 flex flex-col min-w-96 w-5/12 bg-sky-600 text-white max-w-lg rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
         <div>
-          <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed font-semibold">Color Swatch
+          <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed font-semibold">Color
+            Swatch
             Generator</h2>
 
           <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
@@ -161,7 +167,8 @@
       <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
       <section id="imageSection"
         class="ml-2 max-md:ml-0 max-sm:ml-0 h-max flex flex-col min-w-96 w-5/12 max-w-lg max-sm:mt-8 max-md:mt-8 max-[800px]:mt-8 max-[800px]:ml-0 bg-sky-600 text-white rounded-b-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none">
-        <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed font-semibold">Vector Image Generator
+        <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed font-semibold">Vector
+          Image Generator
         </h2>
 
         <!--The id "imageSearchEls" identifies the container for the color search box, the search label, and the search button-->
@@ -173,53 +180,57 @@
             class="border-2 border-sky-500 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 ml-3 rounded-full font-semibold">Search</button>
         </form>
         <!--The id "imageContainer identifies the container in which the search result images will be displayed inside of"-->
+        <div class="mx-4">
+          <div class="grid gap-4">
+            <div class="justify-center flex flex-row mb-4 bg-gray-100 rounded-md" id="imageResultCard0">
+              <img class=" max-h-96 max-w-full rounded-lg" id="imageResult0"
+                src="https://cdn.pixabay.com/animation/2023/08/11/21/18/21-18-05-265_512.gif"
+                alt="now loading animated gif of a series of ticks arranged in a circle.">
+            </div>
+          </div>
+          <div id="imageContainer"
+            class=" flex flex-row flex-nowrap justify-center self-start bg-gray-100 rounded overflow-auto mb-4">
+            <div id="imageResultCard1" class="">
+              <img id="imageResult1" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+            </div>
 
-        <div class="grid gap-4">
-          <div class="justify-center flex flex-row mx-4 mb-4 bg-gray-100 rounded-md" id="imageResultCard0">
-            <img class=" max-h-96 max-w-full rounded-lg" id="imageResult0"
-              src="https://cdn.pixabay.com/animation/2023/08/11/21/18/21-18-05-265_512.gif" alt="now loading animated gif of a series of ticks arranged in a circle.">
-          </div>
-        </div>
-        <div id="imageContainer" class="flex flex-row flex-nowrap justify-center mx-4 my-auto bg-gray-100 rounded overflow-auto">
-          <div id="imageResultCard1" class="">
-            <img id="imageResult1" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-          </div>
-          <div id="imageResultCard2">
-            <img id="imageResult2" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-          </div>
-          <div id="imageResultCard3">
-            <img id="imageResult3" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-          </div>
-          <div id="imageResultCard4">
-            <img id="imageResult4" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-          </div>
-          <div id="imageResultCard5">
-            <img id="imageResult5" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-          </div>
-          <div id="imageResultCard1">
-            <img id="imageResult1" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-          </div>
-          <div id="imageResultCard2">
-            <img id="imageResult2" class=" mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-          </div>
-          <div id="imageResultCard3">
-            <img id="imageResult3" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-          </div>
-          <div id="imageResultCard4">
-            <img id="imageResult4" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-          </div>
-          <div id="imageResultCard5">
-            <img id="imageResult5" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
+            <div id="imageResultCard2">
+              <img id="imageResult2" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+            </div>
+            <div id="imageResultCard3">
+              <img id="imageResult3" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
+            </div>
+            <div id="imageResultCard4">
+              <img id="imageResult4" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+            </div>
+            <div id="imageResultCard5">
+              <img id="imageResult5" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
+            </div>
+            <div id="imageResultCard1">
+              <img id="imageResult1" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+            </div>
+            <div id="imageResultCard2">
+              <img id="imageResult2" class=" mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+            </div>
+            <div id="imageResultCard3">
+              <img id="imageResult3" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
+            </div>
+            <div id="imageResultCard4">
+              <img id="imageResult4" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+            </div>
+            <div id="imageResultCard5">
+              <img id="imageResult5" class="mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
+            </div>
           </div>
         </div>
         <!--The id "favoriteImages" identifies the container that the users favorite images will be displayed inside"-->
@@ -227,7 +238,7 @@
       </section>
 
     </main>
-    
+
 
   </div>
 
@@ -236,7 +247,7 @@
   </footer>
 
   <!--Cant add button to footer for some reason, the footer dissapears. Help pls.-->
- 
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
   <script src="./assets/scripts/toolBox.js"></script>
