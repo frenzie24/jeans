@@ -1,6 +1,6 @@
 const pk = "43404962-ba2a24215101c788c299fa20a";
 
-const classString = `mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
+const classString = `transition ease-in-out delay-150 hover:border-gray-300 hover:scale-110 mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
 const imageString = `imageResult`;
 const cardSting = `${imageString}Card`;
 
@@ -128,8 +128,9 @@ function populateImageElements(vectors) {
     featured.attr('src', vectors[0].vectorURL);
     featured.data('vector-info', vectors[0]);
     let iamgeContainer = $("#imageContainer");
+    let imageContainerClass = iamgeContainer.attr('class');
     iamgeContainer.empty();
-    iamgeContainer.addClass(`flex flex-row flex-nowrap mx-4 my-4 overflow-auto`)
+    iamgeContainer.addClass(imageContainerClass)
 
 
     let vectorCards = [];
