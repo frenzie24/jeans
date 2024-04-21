@@ -115,7 +115,7 @@ function createRowContainer(attr, data, children) {
 }
 
 */
-function generateSwathRowData(mode, colors) {
+function generateSwatchRowData(mode, colors) {
     let rowObjs = [];
     const length = colors.length;
 
@@ -161,7 +161,7 @@ async function getSchemeByHex(hex, type) {
         let rowBabies = [];
         const length = result.colors.length;
         //  length = length > 6 ? 6 : length;
-        rowBabies = generateSwathRowData(result.mode, result.colors);
+        rowBabies = generateSwatchRowData(result.mode, result.colors);
 
 
         if (rowBabies.length > 0) {
@@ -187,7 +187,7 @@ function testGenerics() {
         id: scheme.mode,
         class: "flex flex-row w-full",
     }
-    let rowChildnre = generateSwathRowData(scheme.mode, scheme.colors);
+    let rowChildnre = generateSwatchRowData(scheme.mode, scheme.colors);
     let row = createRowContainer(attr, scheme, rowChildnre);
     $("#swatchContainer").append(row);
 }
