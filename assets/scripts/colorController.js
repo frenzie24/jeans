@@ -67,9 +67,9 @@ function getColorByHex(colorData) {
 async function getSchemeByHex(hex, mode) {
     // allows schemes to be drawn based on # of useful entries in pallette
     let count = 5;
-    if(mode == "quad") count = 4;
+    if (mode == "quad") count = 4;
     if (mode == "triad") count = 3;
-    
+
     let ps = `https://www.thecolorapi.com/scheme?hex=${hex}&format=json&mode=${mode}&count=${count}`;
 
     fetch(ps).then(result => result.json()).then(result => {
@@ -120,9 +120,10 @@ async function getSchemeByHex(hex, mode) {
 function generateSwatchRowData(mode, colors) {
     let rowObjs = [];
     const length = colors.length;
-
     for (let i = 0; i < length; i++) {
         const hex = `${colors[i].hex.value}`;
+
+      
         const swatchContainerAttr = {
             id: `${mode}Color${i}`,
             class: `${hoverAnimString} w-1/${length} h-16 flex flex-row flex-wrap items-start`,
@@ -132,7 +133,7 @@ function generateSwatchRowData(mode, colors) {
             // style: { backgroundColor: `${colors[i].hex.value}` }
         }
         let footer = {
-            attr: { class: "w-full h-7 bg-gray-100 text-black text-base font-medium text-center" },
+            attr: { class: `w-full h-7 bg-gray-${(i % 2 + 1) * 100} max-w:[500px]:text-sm/loose max-w:[500px]:text-black text-black text-base font-medium text-center` },
             data: `${hex}`
         }
 
@@ -176,14 +177,14 @@ function onColorPickerClick(ev) {
 // when color picker closes and value changes, parse value to workable string and run a test
 function onColorPickerChange(ev) {
     let colorHash = ev.target.value;
-   
+
 }
 
 function onColorPickerInput(ev) {
     let colorHash = ev.target.value;
     $('#colorSearch').val(colorHash);
     colorHash = colorHash.slice(1);
-  
+
     // this is when a color value is input
 }
 
@@ -221,14 +222,14 @@ async function renderSchemes(colorData) {
     debugger;
     let swatchContainer = $('#swatchContainer');
     swatchContainer.empty()
-    
+
     schemes.forEach(type => {
         console.log(colorData)
         getSchemeByHex(colorData, type);
 
     });
 
-    
+
 
 }
 
