@@ -230,6 +230,8 @@ async function renderSchemes(colorData) {
 
     });
 
+    
+
 }
 
 // document ready 
