@@ -20,11 +20,10 @@
 
 
 <body class="h-screen min-w-[390px] flex flex-row flex-wrap bg-sky-700">
-  <div class="w-full flex flex-row flex-wrap m-auto bg-sky-700">
-    <header
+  <header
       class="max-sm:h-28 flex flex-row flex-wrap self-start justify-between items-stretch bg-sky-600 h-20 w-full border-b-4 border-yellow-400 border-dashed">
       <h1
-        class="flex items-center text-3xl ml-8 text-white text-center font-extrabold max-md:text-2xl max-[1030px]:text-2xl">
+        class="flex items-center text-4xl ml-8 text-white text-center font-extrabold max-md:text-2xl max-[1030px]:text-3xl">
         Jeans 👖</h1>
       <h2 class="flex items-center text-lg ml-8 text-white max-sm:text-xs max-md:text-sm italic">"Put your website
         together,
@@ -114,6 +113,8 @@
 
       </nav>
     </header>
+  <div class="w-full flex flex-row flex-wrap m-auto bg-sky-700">
+    
     <main class="flex flex-row flex-wrap justify-evenly items-start self-end bg-sky-700 w-full my-8 z-1">
 
       <!--LEFT SECTION/ COLOR SECTION OF PROJECTagewoinasdf-->
@@ -125,23 +126,24 @@
         <section id="colorSection"
         class="mr-2 max-lg:mr-0 flex flex-col w-[500px] max-w-5/6 max-lg:w-5/6 bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none"> 
         <div>
-          <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed font-semibold">Color
+          <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed text-center font-bold">Color
             Swatch
             Generator</h2>
 
           <!--The id "colorSearchEls" identifies the container for the color search box, the search label, and the search buttons-->
-          <form id="colorSearchEls" class="flex flex-row flex-wrap justify-center items-center frow mx-3 my-4">
-            <label class="mr-3 font-medium" for="colorSelect">Select a Color:</label>
+          <form id="colorSearchEls" class="my-2 flex flex-row flex-wrap justify-center items-center">
+            <div class="flex items-center ml-3 mb-2">
+            <label class="mr-3 max-[500px]:font-base font-bold " for="colorSelect">Select a Color:</label>
             <!--The id "colorSelector" identifies the element where the user can select a color from a color picker"-->
-            <input class="rounded-sm border-none bg-none h-8 w-8 rounded-3xl mr-3" type="color" id="colorSelect"
+            <input class="rounded-sm border-none bg-none h-10 w-10 rounded-3xl" type="color" id="colorSelect"
               name="colorSelect" value="#ff0000">
-
+            </div>
             <!--The id "colorSearch" identifies the label of the search box for inputing a color-->
-            <div class=" max-sm:mt-2 max-md:mt-2 max-lg:mt-2 flex flex-row flex-nowrap justify-start">
-              <input class="py-1 px-3 rounded-full grow text-black" type="search" id="colorSearch" />
+            <div class="max-lg:mt-2 mb-1 flex flex-row flex-nowrap justify-start">
+              <input class="w-full py-1 px-3 ml-4 mr-2 rounded-full text-black" type="search" id="colorSearch" />
               <!--The id "colorSearchBtn" identifies the button the user will press to initiate the search for the typed color-->
               <button id="colorSearchBtn"
-                class="border-2 border-sky-500 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 mx-3 rounded-full font-semibold">Search</button>
+                class="border-2 border-sky-500 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 py-1 px-4 mr-2 rounded-full font-semibold">Search</button>
             </div>
 
           </form>
@@ -169,7 +171,7 @@
       <!--The id "imageSection" identifies the left area of the viewport that contains all image elements-->
       <section id="imageSection"
       class="mr-2 max-lg:mr-0 max-lg:mt-8 flex flex-col w-[500px] max-w-5/6 max-lg:w-5/6 bg-sky-600 text-white rounded-3xl border-l-4 border-r-4 border-b-4 border-yellow-400 border-dashed rounded-t-none"> 
-        <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed font-semibold">Vector
+        <h2 class="flex justify-around text-3xl py-8 border-b-4 border-yellow-400 border-dashed font-bold">Vector
           Image Generator
         </h2>
 
