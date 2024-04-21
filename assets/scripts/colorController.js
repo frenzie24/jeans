@@ -33,7 +33,7 @@ function getColorByHex(colorData) {
 
 // handles when a swatch is clicked
 function onSwatchClick(ev) {
-   
+
     ev.preventDefault();
     let color = ev.target.classList[2];
     color = color.slice(4);
@@ -93,27 +93,45 @@ function createRowContainer(attr, data, children) {
     return row;
 }
 
-// Creates swatch attribute and data objects and returns the resulting array of
-/*
-     
+/* Creates [] of rowObj from passed mode and [] of colors, then returns the resulting []
+
+{
+    // rowObj
+    {
+        //containerObj
+        attr: {},
+        data: {},
+    }, 
+    {
+        //contentObj
+        attr: {},
+        data: {},
+    }, 
+    {
+        //footerObj
+        attr: {},
+        data: {},
+    }
+}
+
 */
 function generateSwathRowData(mode, colors) {
     let rowObjs = [];
     const length = colors.length;
-    //  length = length > 6 ? 6 : length;
+
     for (let i = 0; i < length; i++) {
+        const hex = `${colors[i].hex.value}`;
         const swatchContainerAttr = {
             id: `${mode}Color${i}`,
-
             class: `w-1/${length} h-16 flex flex-row flex-wrap items-start`,
         }
         const swatchAttr = {
-            class: `w-full h-9 bg-[${colors[i].hex.value}]`,
+            class: `w-full h-9 bg-[${hex}]`,
             // style: { backgroundColor: `${colors[i].hex.value}` }
         }
         let footer = {
             attr: { class: "w-full h-7 bg-white text-black text-base text-center" },
-            data: `${colors[i].hex.value}`
+            data: `${hex}`
         }
 
         rowObjs.push({
@@ -130,8 +148,6 @@ function generateSwathRowData(mode, colors) {
         );
     }
     return rowObjs;
-
-    // let swatc
 }
 
 async function getSchemeByHex(hex, type) {
@@ -215,7 +231,7 @@ function onColorPickerClick(ev) {
 function onColorPickerChange(ev) {
     let colorHash = ev.target.value;
     // colorHash = colorHash.slice(1);
-   // renderSchemes(colorHash.slice(1));
+    // renderSchemes(colorHash.slice(1));
     //  getColorByHex(colorHash);
 }
 
@@ -231,14 +247,14 @@ function onColorSearch(ev) {
     ev.preventDefault();
     let colorInput = $("#colorSearch");
     let colorString = colorInput.val();
-    if(colorInput.val().indexOf('#')==-1) {
+    if (colorInput.val().indexOf('#') == -1) {
         colorString = findColorDataByName(colorString).hex;
     }
-    
+
     $("#colorSelect").val(colorString);
-    colorString = colorString.replaceAll('#',"");
+    colorString = colorString.replaceAll('#', "");
     renderSchemes(colorString);
-   
+
 }
 
 
