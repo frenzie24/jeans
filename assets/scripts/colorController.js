@@ -133,7 +133,7 @@ function generateSwatchRowData(mode, colors) {
             // style: { backgroundColor: `${colors[i].hex.value}` }
         }
         let footer = {
-            attr: { class: `w-full h-7 bg-gray-${(i % 2 + 1) * 100} max-w:[500px]:text-sm/loose max-w:[500px]:text-black text-black text-base font-medium text-center` },
+            attr: { class: `w-full h-7 bg-gray-${(i%2+1)*100} max-[500px]:text-xs max-[500px]:font-bold text-sky-800 text-base font-bold text-center` },
             data: `${hex}`
         }
 

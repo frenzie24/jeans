@@ -1,6 +1,6 @@
 const pk = "43404962-ba2a24215101c788c299fa20a";
 
-const hoverAnimString = `transition ease-in-out delay-150 hover:border-gray-300 hover:scale-110`
+const hoverAnimString = `transition ease-in-out duration-100 hover:translate-y-1 hover:scale-[120%] antialiased hover:subpixel-antialiased`
 const classString = `flex flex-row flex-wrap justify-center items-center mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
 const imageString = `imageResult`;
 const cardSting = `${imageString}Card`;
