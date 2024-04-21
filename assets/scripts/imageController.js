@@ -129,9 +129,9 @@ function populateImageElements(vectors) {
     featured.attr('src', vectors[0].vectorURL);
     featured.data('vector-info', vectors[0]);
     let iamgeContainer = $("#imageContainer");
-   // let imageContainerClass = iamgeContainer.attr('class');
+    let imageContainerClass = iamgeContainer.attr('class');
     iamgeContainer.empty();
-   // iamgeContainer = ;
+    iamgeContainer.addClass(imageContainerClass);
    // $("#imageSection").append(generateElement('div', {id:'imageContainer', class: imageContainerClass}));
    //iamgeContainer.addClass("flex flex-row flex-nowrap bg-gray-100 rounded mx-4 mb-4 overflow-auto ")
 
