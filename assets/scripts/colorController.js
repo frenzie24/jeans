@@ -67,7 +67,13 @@ function getColorByHex(colorData) {
 // renders color schemes 
 // async function to get schemes by hex and mode from api
 async function getSchemeByHex(hex, mode) {
-    let ps = `https://www.thecolorapi.com/scheme?hex=${hex}&format=json&mode=${mode}`;
+    // allows schemes to be drawn based on # of useful entries in pallette
+    let count = 5;
+    if(mode == "quad") count = 4;
+    if (mode == "triad") count = 3;
+    
+    let ps = `https://www.thecolorapi.com/scheme?hex=${hex}&format=json&mode=${mode}&count=${count}`;
+
     fetch(ps).then(result => result.json()).then(result => {
         let rowAttr = {
             id: result.mode,
