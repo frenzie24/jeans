@@ -31,11 +31,10 @@ function getColorByHex(colorData) {
 &count=6'
 */
 
+// handles when a swatch is clicked
 function onSwatchClick(ev) {
-    //ev.target.parentElement.id
+   
     ev.preventDefault();
-    // console.log(ev.target.id);
-    //  let swatch = ("#" + ev.target.id);
     let color = ev.target.classList[2];
     color = color.slice(4);
     color = color.replaceAll("]", "");
@@ -47,18 +46,23 @@ function onSwatchClick(ev) {
 
 }
 
+// creates a container based on pased objs containing relevant attributes and data [ {attr: {}, data: {}} ]
 function createContainer(containerObj, contentObj, footerObj) {
 
     let ch = footerObj ? 'h-5/6' : "h-full";
+    // calls the toolBox.js function to craete an element with tag type, html attributes, and relevant data to attach to the dom/jquery object
     let _container = generateElement("div",
         containerObj.attr,
         containerObj.data);
 
+    // calls the toolBox.js function to craete an element with tag type, html attributes, and relevant data to attach to the dom/jquery object
+    // then assigns an handler to its' click event and attaches it to the _container 
     let _content = generateElement("div", contentObj.attr, contentObj.data);//.css({ backgroundColor: `#${hex}` }).on('click', onSwatchClick);
     _content.on('click', onSwatchClick);
 
     _container.append(_content);
-
+    // footerObj is an overload argument [not every container is going to need a footer]
+    // if footerObj was not passed we return the container, otherwise create and append the footer and return the container
     if (footerObj) {
 
         let _footer = generateElement("footer",
@@ -71,6 +75,9 @@ function createContainer(containerObj, contentObj, footerObj) {
 
 }
 
+// creates a container for a single row and row children with passed attr, data, and children.
+// children[] contains child attribute and data objects 
+// returns container and children
 function createRowContainer(attr, data, children) {
 
     let row = generateElement('div', attr, data);
@@ -86,7 +93,11 @@ function createRowContainer(attr, data, children) {
     return row;
 }
 
-function createSwathChildrenObjs(mode, colors) {
+// Creates swatch attribute and data objects and returns the resulting array of
+/*
+     
+*/
+function generateSwathRowData(mode, colors) {
     let rowObjs = [];
     const length = colors.length;
     //  length = length > 6 ? 6 : length;
@@ -134,7 +145,7 @@ async function getSchemeByHex(hex, type) {
         let rowBabies = [];
         const length = result.colors.length;
         //  length = length > 6 ? 6 : length;
-        rowBabies = createSwathChildrenObjs(result.mode, result.colors);
+        rowBabies = generateSwathRowData(result.mode, result.colors);
 
 
         if (rowBabies.length > 0) {
@@ -160,7 +171,7 @@ function testGenerics() {
         id: scheme.mode,
         class: "flex flex-row w-full",
     }
-    let rowChildnre = createSwathChildrenObjs(scheme.mode, scheme.colors);
+    let rowChildnre = generateSwathRowData(scheme.mode, scheme.colors);
     let row = createRowContainer(attr, scheme, rowChildnre);
     $("#swatchContainer").append(row);
 }
