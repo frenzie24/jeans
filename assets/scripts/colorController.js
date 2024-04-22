@@ -4,7 +4,7 @@
 
 // "https://www.thecolorapi.com/id?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=json"
 
-
+const rowClassString = ``;
 // creates a container based on pased objs containing relevant attributes and data [ {attr: {}, data: {}} ]
 function createContainer(containerObj, contentObj, footerObj) {
 
@@ -40,6 +40,12 @@ function createContainer(containerObj, contentObj, footerObj) {
 function createRowContainer(attr, data, children) {
 
     let row = generateElement('div', attr, data);
+    
+    const rowHeaderClass = `border-t-1 order-solid min-w-full h-6 bg-[${attr.primary}] text-[${invertColor(attr.primary)}] max-[500px]:text-xs max-[500px]:font-bold text-base font-bold text-center`;
+
+    let header = generateElement('div', {id: attr.id+"Header", class: rowHeaderClass});
+    header.addClass('text-shadow: 1px 1px 2px pink');
+    header.text(attr.id.toUpperCase());
     let rowEls = [];
     const length = children.length;
     for (let i = 0; i < length; i++) {
@@ -49,6 +55,8 @@ function createRowContainer(attr, data, children) {
     }
 
     row.append(rowEls);
+    row.prepend(header);
+
     return row;
 }
 
@@ -75,7 +83,8 @@ async function getSchemeByHex(hex, mode) {
     fetch(ps).then(result => result.json()).then(result => {
         let rowAttr = {
             id: result.mode,
-            class: "flex flex-row w-full",
+            class: `flex flex-row flex-wrap w-full text-[#${hex}]`,
+            primary: `#${hex}`
         }
         let rowBabies = [];
         const length = result.colors.length;
@@ -126,14 +135,14 @@ function generateSwatchRowData(mode, colors) {
       
         const swatchContainerAttr = {
             id: `${mode}Color${i}`,
-            class: `${hoverAnimString} w-1/${length} h-16 flex flex-row flex-wrap items-start`,
+            class: `${hoverAnimString} w-1/${length} h-14 flex flex-row flex-wrap items-start`,
         }
         const swatchAttr = {
-            class: `w-full h-9 bg-[${hex}]`,
+            class: `w-full h-8 bg-[${hex}]`,
             // style: { backgroundColor: `${colors[i].hex.value}` }
         }
         let footer = {
-            attr: { class: `w-full h-7 bg-gray-${(i%2+1)*100} max-[500px]:text-xs max-[500px]:font-bold text-sky-800 text-base font-bold text-center` },
+            attr: { class: `w-full h-6 bg-gray-${(i%2+1)*100} mix-blend-normal text-black max-[500px]:text-xs max-[500px]:font-bold text-base font-bold text-center ` },
             data: `${hex}`
         }
 
