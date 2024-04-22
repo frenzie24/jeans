@@ -1,6 +1,7 @@
 const pk = "43404962-ba2a24215101c788c299fa20a";
 
-const classString = `mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
+const hoverAnimString = `transition ease-in-out duration-100 hover:translate-y-1 hover:scale-[120%] antialiased hover:subpixel-antialiased`
+const classString = `flex flex-row flex-wrap justify-center items-center mr-2 h-auto min-w-20 w-1/5 max-w-96 rounded-lg`;// `flex flex-row flex-nowrap mx-4 my-4 overflow-auto`;
 const imageString = `imageResult`;
 const cardSting = `${imageString}Card`;
 
@@ -128,16 +129,20 @@ function populateImageElements(vectors) {
     featured.attr('src', vectors[0].vectorURL);
     featured.data('vector-info', vectors[0]);
     let iamgeContainer = $("#imageContainer");
+    let imageContainerClass = iamgeContainer.attr('class');
     iamgeContainer.empty();
-    iamgeContainer.addClass(`flex flex-row flex-nowrap mx-4 my-4 overflow-auto`)
+    iamgeContainer.addClass(imageContainerClass);
+   // $("#imageSection").append(generateElement('div', {id:'imageContainer', class: imageContainerClass}));
+   //iamgeContainer.addClass("flex flex-row flex-nowrap bg-gray-100 rounded mx-4 mb-4 overflow-auto ")
 
 
+ iamgeContainer = $("#imageContainer");
     let vectorCards = [];
     for (let i = 1; i < vectors.length; i++) {
-        let card = generateElement("div", { id: `${cardSting}${i}` });
+        let card = generateElement("div", { id: `${cardSting}${i}`, class: `${classString}`});
         card.on('click', handleImageCardClick)
         let attr = {
-            class: classString,
+            class: `${hoverAnimString} ${classString}`,
             src: vectors[i].vectorURL,
             id: `${imageString}${i}`,
             alt: vectors[i].tags,
