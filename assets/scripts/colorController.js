@@ -258,7 +258,8 @@ $(() => {
     });
 
     let lastScheme = localStorage.getItem('scheme');
-    debugger;
+    colorSelect.val(`#${lastScheme}`);
+    colorInput.val(`#${lastScheme}`);
     renderSchemes(lastScheme ? lastScheme : findColorDataByName('red').hex.slice(1));
 
 });
