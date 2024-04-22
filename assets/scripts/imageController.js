@@ -62,6 +62,12 @@ function getVectorsByKeywords(keywords) {
  */
         populateImageElements(hits);
         debugger;
+    }).catch(err => {
+        if (err instanceof TypeError && err.message.includes('API key')) {
+            console.error('Invalid API key:', error);
+          } else {
+            console.error('There was a problem with the Fetch operation:', err);
+          }
     });
 
 }
