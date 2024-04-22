@@ -18,7 +18,7 @@ function createContainer(containerObj, contentObj, footerObj) {
     // then assigns an handler to its' click event and attaches it to the _container 
     let _content = generateElement("div", contentObj.attr, contentObj.data);//.css({ backgroundColor: `#${hex}` }).on('click', onSwatchClick);
     _content.on('click', onSwatchClick);
-
+    _content.on('dblclick', onSwatchDblClick);
     _container.append(_content);
     // footerObj is an overload argument [not every container is going to need a footer]
     // if footerObj was not passed we return the container, otherwise create and append the footer and return the container
@@ -221,6 +221,18 @@ function onSwatchClick(ev) {
     $("#colorSelect").val(color);
 
     $("#colorSearch").val(color);
+  
+    //get swatch [0] hex pass to get SchemeByHex with for loop for the schemes
+
+}
+
+// handles when a swatch is clicked
+function onSwatchDblClick(ev) {
+
+    ev.preventDefault();
+ let color = $("#colorSearch").val().replaceAll("#", "");
+ renderSchemes(color);
+   
     debugger;
     //get swatch [0] hex pass to get SchemeByHex with for loop for the schemes
 
@@ -265,6 +277,8 @@ $(() => {
             onColorSearch(e)
         }
     });
+
+
 
     let lastScheme = localStorage.getItem('scheme');
     colorSelect.val(`#${lastScheme}`);
