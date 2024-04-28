@@ -35,18 +35,31 @@ functions for form information sent in will be in the format of subjectSubmit.
 # Usage
 
 - Home Page
+<br>
+![Home Page](./assets/images/homepage.PNG)
 
-![Homepage](./Screen%20Shot%202024-04-19%20at%203.09.39%20AM.png)
+- Blue
+<br>
+![Blue](./assets/images/dark_blue_ss.png)
+<br>
+- Red<br>
+![Red](./assets/images/dark_red_ss.png)<br>
+
+- Light<br>
+![Light](./assets/images/light_colors_ss.png)
+<br>
+- Mobile<br>
+![Mobile](./assets/images/mobile.png)<br>
 
 - Click the "instructions" button to display a model containing details on how to use the app. See image below.
 
-![Instructions](./Screen%20Shot%202024-04-19%20at%203.10.04%20AM.png)
+![Instructions](./assets/images/instructions.png)
 
 - To generate a color theme, start by typing the name of a color into the color search bar, or click the provided color block to select from a color picker. User input will generate themes based on selection.
 
 - To generate an image, type into the search bar the type of image you want and click "search". Several images pertaining to that search will display.
 
-![Searching](./Screen%20Shot%202024-04-19%20at%203.10.24%20AM.png)
+![Searching](./assets/images/searching.png)
 - To see the list of creators for this application, click the "Creators" button on the right of the header.
 
 # Credits

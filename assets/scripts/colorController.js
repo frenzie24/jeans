@@ -18,7 +18,7 @@ function createContainer(containerObj, contentObj, footerObj) {
     // then assigns an handler to its' click event and attaches it to the _container 
     let _content = generateElement("div", contentObj.attr, contentObj.data);//.css({ backgroundColor: `#${hex}` }).on('click', onSwatchClick);
     _content.on('click', onSwatchClick);
-
+    _content.on('dblclick', onSwatchDblClick);
     _container.append(_content);
     // footerObj is an overload argument [not every container is going to need a footer]
     // if footerObj was not passed we return the container, otherwise create and append the footer and return the container
@@ -40,10 +40,10 @@ function createContainer(containerObj, contentObj, footerObj) {
 function createRowContainer(attr, data, children) {
 
     let row = generateElement('div', attr, data);
-    
+
     const rowHeaderClass = `border-t-1 order-solid min-w-full h-6 bg-[${attr.primary}] text-[${invertColor(attr.primary)}] max-[500px]:text-xs max-[500px]:font-bold text-base font-bold text-center`;
 
-    let header = generateElement('div', {id: attr.id+"Header", class: rowHeaderClass});
+    let header = generateElement('div', { id: attr.id + "Header", class: rowHeaderClass });
     header.addClass('text-shadow: 1px 1px 2px pink');
     header.text(attr.id.toUpperCase());
     let rowEls = [];
@@ -98,8 +98,13 @@ async function getSchemeByHex(hex, mode) {
         $("#swatchContainer").append(row);
 
 
-        // may need to set up async and set a variable instead of return
-        // return result
+
+    }).catch(err => {
+        if (err instanceof TypeError && err.message.includes('API key')) {
+            console.error('Invalid API key:', err);
+        } else {
+            console.error('There was a problem with the Fetch operation:', err);
+        }
     })
 }
 
@@ -132,7 +137,7 @@ function generateSwatchRowData(mode, colors) {
     for (let i = 0; i < length; i++) {
         const hex = `${colors[i].hex.value}`;
 
-      
+
         const swatchContainerAttr = {
             id: `${mode}Color${i}`,
             class: `${hoverAnimString} w-1/${length} h-14 flex flex-row flex-wrap items-start`,
@@ -142,7 +147,7 @@ function generateSwatchRowData(mode, colors) {
             // style: { backgroundColor: `${colors[i].hex.value}` }
         }
         let footer = {
-            attr: { class: `w-full h-6 bg-gray-${(i%2+1)*100} mix-blend-normal text-black max-[500px]:text-xs max-[500px]:font-bold text-base font-bold text-center ` },
+            attr: { class: `w-full h-6 bg-gray-${(i % 2 + 1) * 100} mix-blend-normal text-black max-[500px]:text-xs max-[500px]:font-bold text-base font-bold text-center ` },
             data: `${hex}`
         }
 
@@ -199,16 +204,19 @@ function onColorPickerInput(ev) {
 
 function onColorSearch(ev) {
     ev.preventDefault();
-    let colorInput = $("#colorSearch");
-    let colorString = colorInput.val();
-    if (colorInput.val().indexOf('#') == -1) {
-        colorString = findColorDataByName(colorString).hex;
+    try {
+        let colorInput = $("#colorSearch");
+        let colorString = colorInput.val();
+        if (colorInput.val().indexOf('#') == -1) {
+            colorString = findColorDataByName(colorString).hex;
+        }
+
+        $("#colorSelect").val(colorString);
+        colorString = colorString.replaceAll('#', "");
+        renderSchemes(colorString);
+    } catch (err) {
+        $('#colorSearch').val('Try Again');
     }
-
-    $("#colorSelect").val(colorString);
-    colorString = colorString.replaceAll('#', "");
-    renderSchemes(colorString);
-
 }
 
 // handles when a swatch is clicked
@@ -221,6 +229,18 @@ function onSwatchClick(ev) {
     $("#colorSelect").val(color);
 
     $("#colorSearch").val(color);
+
+    //get swatch [0] hex pass to get SchemeByHex with for loop for the schemes
+
+}
+
+// handles when a swatch is clicked
+function onSwatchDblClick(ev) {
+
+    ev.preventDefault();
+    let color = $("#colorSearch").val().replaceAll("#", "");
+    renderSchemes(color);
+
     debugger;
     //get swatch [0] hex pass to get SchemeByHex with for loop for the schemes
 
@@ -265,6 +285,8 @@ $(() => {
             onColorSearch(e)
         }
     });
+
+
 
     let lastScheme = localStorage.getItem('scheme');
     colorSelect.val(`#${lastScheme}`);
